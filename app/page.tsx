@@ -5,6 +5,9 @@ import { ArrowUp } from "lucide-react";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Experience from "./components/Journey";
+import Projects from "./components/Projects";
+import ResumeViewer from "./components/ResumeViewer";
+import ContactSection from "./components/ContactSection";
 
 // Import sections as components
 
@@ -27,6 +30,9 @@ export default function Home() {
        <Hero/>
        <Skills/>
        <Experience/>
+       <Projects/>
+       <ResumeViewer/>
+       <ContactSection/>
       </main>
 
       {/* Scroll-to-top button */}

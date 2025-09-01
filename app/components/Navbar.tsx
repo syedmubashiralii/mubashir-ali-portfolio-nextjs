@@ -7,8 +7,6 @@ import { cn } from "../utils/utils";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-
-
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -26,7 +24,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#" },
     { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
+    { name: "Journey", href: "#journey" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
@@ -44,11 +42,14 @@ export default function Navbar() {
           href="/"
           className={cn(
             "flex items-center space-x-2 text-2xl font-bold transition-colors",
-            isScrolled ? "text-blue-600 dark:text-blue-400" : "text-white"
+            isScrolled
+              ? "text-blue-600 dark:text-blue-400" // on scroll
+              : "text-black dark:text-white" // default (light=black, dark=white)
           )}
         >
-        
-          <span>Syed <span className="text-blue-600">Mubashir</span> Ali</span>
+          <span>
+            Syed <span className="text-blue-600">Mubashir</span> Ali
+          </span>
         </Link>
 
         {/* Desktop Menu */}
@@ -59,7 +60,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "hover:text-blue-500 dark:hover:text-blue-300 font-medium relative group transition-colors",
-                isScrolled ? "text-gray-800 dark:text-gray-100" : "text-white"
+                "text-gray-800 dark:text-gray-100"
               )}
             >
               {link.name}
@@ -67,7 +68,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {mounted && (
+          {/* {mounted && (
             <button
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               className="rounded-md border px-3 py-1 text-sm 
@@ -76,7 +77,7 @@ export default function Navbar() {
             >
               {theme === "light" ? "🌙" : "☀️"}
             </button>
-          )}
+          )} */}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -130,7 +131,7 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {mounted && (
+              {/* {mounted && (
                 <button
                   onClick={() => {
                     setTheme(theme === "light" ? "dark" : "light");
@@ -142,7 +143,7 @@ export default function Navbar() {
                 >
                   {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
                 </button>
-              )}
+              )} */}
             </nav>
           </div>
         </div>

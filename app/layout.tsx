@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Mubashir Ali - Flutter & Next.js Developer",
   description: "Portfolio of Mubashir Ali - Flutter & Next.js Developer",
 };
 

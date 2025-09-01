@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import profileImage from "../../public/profile-image.png";
 import Image from "next/image";
 
-import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin ,Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
@@ -19,6 +19,16 @@ export default function Hero() {
       </div>
       {/* Name with typing effect */}
       <h1 className="animate-typing text-3xl md:text-5xl font-extrabold leading-tight text-blue-600 dark:text-blue-400 mt-6">Syed Mubashir Ali</h1>
+      {/* Email on right side */}
+      <div className="flex justify-end mt-2">
+        <Link
+          href="mailto:smubashirali620@gmail.com?subject=Hello%20Mubashir&body=I%20would%20like%20to%20connect%20with%20you."
+          className="text-sm md:text-base text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+        >
+          <Mail size={18}/>
+          smubashirali620@gmail.com
+        </Link>
+      </div>
 
       {/* Intro / Motive */}
       <motion.p
@@ -57,7 +67,7 @@ export default function Hero() {
         <Button
           asChild
           variant="outline"
-          className="bg-transparent border-slate-400 text-white hover:bg-white/10 hover:border-white transition-all duration-300 hover:scale-105"
+          className="bg-transparent border-slate-400 text-slate dark:text-white  hover:bg-white/10 hover:border-black dark:hover:border-white transition-all duration-300 hover:scale-105"
         >
           <Link href="#resume">
             Download CV <Download className="ml-2 h-4 w-4" />
