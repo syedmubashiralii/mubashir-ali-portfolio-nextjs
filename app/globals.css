@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* Optional: Keep fonts as CSS variables */
+:root {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Remove hardcoded background + color here!
+   Tailwind will handle it with classes */
+
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17ch; /* adjust number to match characters in your text */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
+
+.animate-typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid currentColor;
+  animation: typing 2s steps(17, end), blink 0.7s step-end infinite;
+}
+
