@@ -67,7 +67,7 @@ const certifications = [
     title: "Mastering Next.js 13 with TypeScript",
     issuer: "Code With Mosh",
     period: "Aug 2025",
-    link: "https://syed-mubashir-ali-portfolio.vercel.app/public/next-js-with-ts.pdf",
+    link: "https://syed-mubashir-ali-portfolio.vercel.app/next-js-with-ts.pdf",
   },
   {
     title: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
