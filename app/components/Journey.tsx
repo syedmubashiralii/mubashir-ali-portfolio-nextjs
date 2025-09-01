@@ -10,7 +10,7 @@ const experiences = [
     company: "HeapStash Global",
     location: "Lahore (Remote)",
     period: "Nov 2023 - Mar 2025",
-    documentLink: "https://raw.githubusercontent.com/syedmubashiralii/syed-mubashir-ali/main/images/Experience-Letter-HeapStash.pdf",
+    documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/Experience-Letter-HeapStash.pdf",
     description: [
       {
         title: "Neo One – Fintech Application",
@@ -36,7 +36,7 @@ const experiences = [
     company: "Khas Tech",
     location: "Islamabad",
     period: "Jun 2022 - Nov 2023",
-    documentLink: "https://raw.githubusercontent.com/syedmubashiralii/syed-mubashir-ali/main/images/Experience-Letter-Khastech.pdf",
+    documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/Experience-Letter-Khastech.pdf",
     description: [
       {
         title: "AI-Powered Editing & Utility Apps",
