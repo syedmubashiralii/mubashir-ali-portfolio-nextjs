@@ -144,7 +144,7 @@ export default function Projects() {
                     <ExternalLink size={16} /> Live Demo
                   </Link>
                 )}
-                {project.githubLink && (
+                {/* {project.githubLink && (
                   <Link
                     href={project.githubLink}
                     target="_blank"
@@ -152,14 +152,14 @@ export default function Projects() {
                   >
                     <Github size={16} /> Code
                   </Link>
-                )}
+                )} */}
               </div>
             </div>
           </motion.div>
         ))}
       
       </div>
-        <div className="text-center mt-20 items-center">
+        {/* <div className="text-center mt-20 items-center">
           <Button 
             asChild
             variant="outline" 
@@ -169,7 +169,7 @@ export default function Projects() {
               View More on GitHub <Github className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
             </Link>
           </Button>
-        </div>
+        </div> */}
     </section>
   );
 }
