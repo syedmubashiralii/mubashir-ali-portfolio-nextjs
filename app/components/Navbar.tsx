@@ -43,8 +43,8 @@ export default function Navbar() {
           className={cn(
             "flex items-center space-x-2 text-2xl font-bold transition-colors",
             isScrolled
-              ? "text-blue-600 dark:text-blue-400" // on scroll
-              : "text-black dark:text-white" // default (light=black, dark=white)
+              ? "text-blue-600 dark:text-white" 
+              : "text-black dark:text-white"
           )}
         >
           <span>
