@@ -9,7 +9,8 @@ const ResumeViewer = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const resumeUrl =
-    "https://drive.google.com/file/d/1KK_ySJVvqbM8-uQNdQtbmXxTFK8r0Rzi/view?usp=drive_link";
+    "https://drive.google.com/file/d/1Ad4ibadTm6gtoS5adBnmai8NDYHn8UAg/view?usp=drive_link";
+
 
   // Convert Google Drive link to embed format
   const getEmbedUrl = (url: string) => {
