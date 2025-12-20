@@ -5,6 +5,50 @@ import { Briefcase, GraduationCap, Award, Calendar, ExternalLink, MapPin } from 
 import Link from "next/link";
 
 const experiences = [
+   {
+      title: "Senior Flutter Developer",
+      company: "Impact IT Solutions",
+      location: "Islamabad (Onsite)",
+      period: "Apr 2025 - Present",
+      documentLink: "#",
+      description: [
+        {
+          title: "Key Responsibilities",
+          details: [
+            "Manage and support a Flutter-based POS system used across multiple outlets",
+            "Oversee the Pulse Student mobile app for food ordering, vouchers, coupons, discounts, and events management",
+            "Handle POS core modules including items and categories management, stock and supplier management, and purchase orders",
+            "Process cashier-side operations and kitchen-side order processing",
+            "Implement and manage discount features such as vouchers, coupons, and promotional offers",
+            "Monitor system performance, resolve issues, and ensure data accuracy",
+            "Collaborate with operations and management teams to improve workflows and user experience",
+          ],
+        },
+        {
+          title: "Tools & Technologies",
+          details: ["Flutter, POS Systems, Mobile App Management, Inventory Management, Voucher & Coupon Systems"],
+        },
+      ],
+    },
+    {
+      title: "Senior Flutter Developer",
+      company: "KodersPoint",
+      location: "Lahore (Remote)",
+      period: "Jul 2023 - Oct 2025",
+      documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/KP-Experience-Letter.jpg",
+      description: [
+        {
+          title: "Key Responsibilities",
+          details: [
+            "Worked on KodersPoint client apps, primarily using Flutter, with additional projects in React Native and Java (Android). Developed cross-platform MVPs and full-scale applications, consistently delivering optimized solutions tailored to client needs.",
+          ],
+        },
+        {
+          title: "Tools & Technologies",
+          details: ["Flutter, React Native, Java (Android), Cross-Platform Development"],
+        },
+      ],
+    },
   {
     title: "Flutter Developer",
     company: "HeapStash Global",
