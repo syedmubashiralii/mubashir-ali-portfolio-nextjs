@@ -8,8 +8,11 @@ import { Button } from "./ui/button";
 const ResumeViewer = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
+  // const resumeUrl =
+  //   "https://drive.google.com/file/d/1Ad4ibadTm6gtoS5adBnmai8NDYHn8UAg/view?usp=drive_link";
+
   const resumeUrl =
-    "https://drive.google.com/file/d/1Ad4ibadTm6gtoS5adBnmai8NDYHn8UAg/view?usp=drive_link";
+    "https://drive.google.com/file/d/1QzU4-s89U3qyQpeAoIGWDYHQHFOjGnYs/view?usp=sharing";
 
 
   // Convert Google Drive link to embed format
