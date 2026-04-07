@@ -1,37 +1,49 @@
 @import "tailwindcss";
 
-
-/* Optional: Keep fonts as CSS variables */
+/* Font CSS variables */
 :root {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Remove hardcoded background + color here!
-   Tailwind will handle it with classes */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Selection highlight */
+::selection {
+  background-color: rgb(59 130 246 / 0.2);
+  color: inherit;
+}
 
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(59 130 246 / 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(59 130 246 / 0.6);
+}
 
-@keyframes typing {
+/* Fade-in-up utility */
+@keyframes fadeInUp {
   from {
-    width: 0;
+    opacity: 0;
+    transform: translateY(24px);
   }
   to {
-    width: 17ch; /* adjust number to match characters in your text */
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
 }
-
-.animate-typing {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid currentColor;
-  animation: typing 2s steps(17, end), blink 0.7s step-end infinite;
-}
-

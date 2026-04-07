@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mubashir Ali - Flutter & Next.js Developer",
-  description: "Portfolio of Mubashir Ali - Flutter & Next.js Developer",
+  title: "Syed Mubashir Ali — Senior Flutter Developer",
+  description:
+    "Portfolio of Syed Mubashir Ali — Senior Flutter Developer with 4+ years of experience shipping 20+ production apps across fintech, POS, travel, healthcare, and consumer platforms.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
