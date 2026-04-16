@@ -23,7 +23,7 @@ const ContactSection = () => {
     e.preventDefault();
 
     const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0AMessage: ${formData.message}`;
-    const whatsappNumber = "";
+    const whatsappNumber = "+923105205275";
 
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
 

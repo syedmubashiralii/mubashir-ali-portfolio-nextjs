@@ -18,9 +18,9 @@ const stats = [
 //mailto:smubashirali620@gmail.com
 
 const socials = [
-  { href: "", icon: <Github size={18} />, label: "GitHub" },
-  { href: "", icon: <Linkedin size={18} />, label: "LinkedIn" },
-  { href: "", icon: <Mail size={18} />, label: "Email" },
+  { href: "https://github.com/syedmubashiralii", icon: <Github size={18} />, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/syed-mubashir-ali-796122177", icon: <Linkedin size={18} />, label: "LinkedIn" },
+  { href: "mailto:smubashirali620@gmail.com", icon: <Mail size={18} />, label: "Email" },
 ];
 
 export default function Hero() {

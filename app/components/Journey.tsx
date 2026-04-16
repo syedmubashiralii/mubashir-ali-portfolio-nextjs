@@ -5,150 +5,150 @@ import { Briefcase, GraduationCap, Award, Calendar, ExternalLink, MapPin } from 
 import Link from "next/link";
 
 const experiences = [
-  // {
-  //   title: "Senior Flutter Developer",
-  //   company: "DPL (deployed to Axian Group)",
-  //   location: "Islamabad, PK",
-  //   period: "Jan 2026 – Present",
-  //   documentLink: "",
-  //   badge: "Current",
-  //   description: [
-  //     {
-  //       title: "Key Responsibilities",
-  //       details: [
-  //         "Embedded within Axian Group, a pan-African telecom and fintech conglomerate, delivering Flutter solutions across multiple high-impact product lines.",
-  //         "Developing the Tanzania Super App — a multi-service platform combining fintech, telecom, and daily utility services for the Tanzanian market.",
-  //         "Building a fintech application for digital payments, wallet management, and financial services; and a self-care app enabling telecom subscribers to manage accounts, plans, and usage.",
-  //         "Contributing to a telecom platform project, delivering cross-platform features for network service management and subscriber experience across African markets.",
-  //       ],
-  //     },
-  //     {
-  //       title: "Tools & Technologies",
-  //       details: ["Flutter, Dart, Fintech APIs, Telecom SDKs, Clean Architecture, BLoC"],
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Flutter Developer",
-  //   company: "Impact IT Solutions",
-  //   location: "Islamabad, PK",
-  //   period: "Apr 2025 – Dec 2025",
-  //   documentLink: "#",
-  //   badge: "",
-  //   description: [
-  //     {
-  //       title: "Key Responsibilities",
-  //       details: [
-  //         "Managed and maintained a Flutter-based Point of Sale (POS) system deployed across multiple outlets at the University of Wollongong (UOW), Australia — covering items & categories, stock, supplier, purchase orders, cashier, and kitchen-side operations.",
-  //         "Developed and maintained Pulse, a student mobile application serving UOW students for food ordering, book purchasing, vouchers, coupons, event information, and membership subscriptions.",
-  //         "Implemented advanced discount and promotion systems including vouchers, coupons, and promotional offer management.",
-  //         "Ensured system reliability through proactive performance monitoring, issue resolution, and cross-team collaboration.",
-  //       ],
-  //     },
-  //     {
-  //       title: "Tools & Technologies",
-  //       details: ["Flutter, Dart, POS Systems, Linkly Payment, Inventory Management, Voucher & Coupon Systems"],
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Senior Flutter Developer",
-  //   company: "KodersPoint",
-  //   location: "Lahore, PK (Remote)",
-  //   period: "Jul 2023 – Oct 2025",
-  //   documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/KP-Experience-Letter.jpg",
-  //   badge: "",
-  //   description: [
-  //     {
-  //       title: "Key Responsibilities",
-  //       details: [
-  //         "Architected and delivered cross-platform MVPs and full-scale applications for diverse clients using Flutter, with additional projects in React Native and Java (Android).",
-  //         "Built and deployed multiple Flutter Web admin panels for business management workflows.",
-  //         "Consistently delivered optimized, client-tailored solutions across varied industry verticals including e-commerce, services, and utilities.",
-  //       ],
-  //     },
-  //     {
-  //       title: "Tools & Technologies",
-  //       details: ["Flutter, React Native, Java (Android), Flutter Web, Cross-Platform Development"],
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Flutter Developer",
-  //   company: "HeapStash Global (for Sheikh Makhtoum Neo Technologies, UAE)",
-  //   location: "Lahore, PK (Remote)",
-  //   period: "Nov 2023 – Mar 2025",
-  //   documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/Experience-Letter-HeapStash.pdf",
-  //   badge: "",
-  //   description: [
-  //     {
-  //       title: "Neo One – Fintech Application",
-  //       details: [
-  //         "Engineered Neo One, a fintech mobile application integrating bank account linking and cryptocurrency wallet management with secure transaction handling.",
-  //         "Integrated IBAN generation and card issuance via Weavr/Satchel; implemented crypto wallet (BTC/ETH) with Striga API.",
-  //         "Open banking via Plaid + secure KYC & UX consistency.",
-  //       ],
-  //     },
-  //     {
-  //       title: "Neo Pass – Travel & Booking Platform",
-  //       details: [
-  //         "Built Neo Pass, a Flutter web application for international flight bookings with integrated cryptocurrency payment support, optimized for performance and seamless UX.",
-  //         "Integrated crypto + bank transfers & cards; pixel-perfect UI from Figma designs.",
-  //       ],
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Flutter Mobile App Developer",
-  //   company: "Khas Tech",
-  //   location: "Islamabad, PK",
-  //   period: "Jul 2022 – Nov 2023",
-  //   documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/Experience-Letter-Khastech.pdf",
-  //   badge: "",
-  //   description: [
-  //     {
-  //       title: "Key Responsibilities",
-  //       details: [
-  //         "Developed and published 20+ Flutter applications to the Google Play Store and Apple App Store, growing the company's App Store presence from 0 to 20+ live apps.",
-  //         "Delivered AI-powered image processing apps (Enhancer, Remover, Sketcher) leveraging Google ML Kit, OpenCV, and FFmpeg.",
-  //         "Built ICR (Intelligent Character Recognition) applications for document scanning and text extraction.",
-  //         "Created fitness tracking and pedometer applications for location-based and health services.",
-  //         "Integrated ads & IAP monetization: Google AdMob, AppLovin, Meta Audience Network.",
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    title: "Senior Flutter Developer",
+    company: "DPL (deployed to Axian Group)",
+    location: "Islamabad, PK",
+    period: "Jan 2026 – Present",
+    documentLink: "",
+    badge: "Current",
+    description: [
+      {
+        title: "Key Responsibilities",
+        details: [
+          "Embedded within Axian Group, a pan-African telecom and fintech conglomerate, delivering Flutter solutions across multiple high-impact product lines.",
+          "Developing the Tanzania Super App — a multi-service platform combining fintech, telecom, and daily utility services for the Tanzanian market.",
+          "Building a fintech application for digital payments, wallet management, and financial services; and a self-care app enabling telecom subscribers to manage accounts, plans, and usage.",
+          "Contributing to a telecom platform project, delivering cross-platform features for network service management and subscriber experience across African markets.",
+        ],
+      },
+      {
+        title: "Tools & Technologies",
+        details: ["Flutter, Dart, Fintech APIs, Telecom SDKs, Clean Architecture, BLoC"],
+      },
+    ],
+  },
+  {
+    title: "Flutter Developer",
+    company: "Impact IT Solutions",
+    location: "Islamabad, PK",
+    period: "Apr 2025 – Dec 2025",
+    documentLink: "#",
+    badge: "",
+    description: [
+      {
+        title: "Key Responsibilities",
+        details: [
+          "Managed and maintained a Flutter-based Point of Sale (POS) system deployed across multiple outlets at the University of Wollongong (UOW), Australia — covering items & categories, stock, supplier, purchase orders, cashier, and kitchen-side operations.",
+          "Developed and maintained Pulse, a student mobile application serving UOW students for food ordering, book purchasing, vouchers, coupons, event information, and membership subscriptions.",
+          "Implemented advanced discount and promotion systems including vouchers, coupons, and promotional offer management.",
+          "Ensured system reliability through proactive performance monitoring, issue resolution, and cross-team collaboration.",
+        ],
+      },
+      {
+        title: "Tools & Technologies",
+        details: ["Flutter, Dart, POS Systems, Linkly Payment, Inventory Management, Voucher & Coupon Systems"],
+      },
+    ],
+  },
+  {
+    title: "Senior Flutter Developer",
+    company: "KodersPoint",
+    location: "Lahore, PK (Remote)",
+    period: "Jul 2023 – Oct 2025",
+    documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/KP-Experience-Letter.jpg",
+    badge: "",
+    description: [
+      {
+        title: "Key Responsibilities",
+        details: [
+          "Architected and delivered cross-platform MVPs and full-scale applications for diverse clients using Flutter, with additional projects in React Native and Java (Android).",
+          "Built and deployed multiple Flutter Web admin panels for business management workflows.",
+          "Consistently delivered optimized, client-tailored solutions across varied industry verticals including e-commerce, services, and utilities.",
+        ],
+      },
+      {
+        title: "Tools & Technologies",
+        details: ["Flutter, React Native, Java (Android), Flutter Web, Cross-Platform Development"],
+      },
+    ],
+  },
+  {
+    title: "Flutter Developer",
+    company: "HeapStash Global (for Sheikh Makhtoum Neo Technologies, UAE)",
+    location: "Lahore, PK (Remote)",
+    period: "Nov 2023 – Mar 2025",
+    documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/Experience-Letter-HeapStash.pdf",
+    badge: "",
+    description: [
+      {
+        title: "Neo One – Fintech Application",
+        details: [
+          "Engineered Neo One, a fintech mobile application integrating bank account linking and cryptocurrency wallet management with secure transaction handling.",
+          "Integrated IBAN generation and card issuance via Weavr/Satchel; implemented crypto wallet (BTC/ETH) with Striga API.",
+          "Open banking via Plaid + secure KYC & UX consistency.",
+        ],
+      },
+      {
+        title: "Neo Pass – Travel & Booking Platform",
+        details: [
+          "Built Neo Pass, a Flutter web application for international flight bookings with integrated cryptocurrency payment support, optimized for performance and seamless UX.",
+          "Integrated crypto + bank transfers & cards; pixel-perfect UI from Figma designs.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Flutter Mobile App Developer",
+    company: "Khas Tech",
+    location: "Islamabad, PK",
+    period: "Jul 2022 – Nov 2023",
+    documentLink: "https://syed-mubashir-ali-portfolio.vercel.app/Experience-Letter-Khastech.pdf",
+    badge: "",
+    description: [
+      {
+        title: "Key Responsibilities",
+        details: [
+          "Developed and published 20+ Flutter applications to the Google Play Store and Apple App Store, growing the company's App Store presence from 0 to 20+ live apps.",
+          "Delivered AI-powered image processing apps (Enhancer, Remover, Sketcher) leveraging Google ML Kit, OpenCV, and FFmpeg.",
+          "Built ICR (Intelligent Character Recognition) applications for document scanning and text extraction.",
+          "Created fitness tracking and pedometer applications for location-based and health services.",
+          "Integrated ads & IAP monetization: Google AdMob, AppLovin, Meta Audience Network.",
+        ],
+      },
+    ],
+  },
 ];
 
 const education = [
-  // {
-  //   degree: "Bachelor of Science in Computer Science",
-  //   institution: "PMAS Arid Agriculture University, Rawalpindi",
-  //   location: "Rawalpindi, Pakistan",
-  //   period: "Oct 2018 – Jun 2022",
-  //   description: "Graduated with strong foundations in programming, algorithms, data structures, and software engineering.",
-  // },
+  {
+    degree: "Bachelor of Science in Computer Science",
+    institution: "PMAS Arid Agriculture University, Rawalpindi",
+    location: "Rawalpindi, Pakistan",
+    period: "Oct 2018 – Jun 2022",
+    description: "Graduated with strong foundations in programming, algorithms, data structures, and software engineering.",
+  },
 ];
 
 const certifications = [
-  // {
-  //   title: "Mastering Next.js with TypeScript",
-  //   issuer: "Code With Mosh",
-  //   period: "Aug 2025",
-  //   link: "https://syed-mubashir-ali-portfolio.vercel.app/next-js-with-ts.pdf",
-  // },
-  // {
-  //   title: "Node.js, Express & More: Complete Bootcamp",
-  //   issuer: "Udemy",
-  //   period: "Apr 2025",
-  //   link: "https://www.udemy.com/certificate/UC-a0023ed1-5728-4812-89e8-1657c6e2c4c1/",
-  // },
-  // {
-  //   title: "Flutter BLoC — Zero to Hero Complete Course",
-  //   issuer: "Udemy",
-  //   period: "May 2024",
-  //   link: "https://www.udemy.com/certificate/UC-3cce47c1-9f06-4b31-bcfd-e70630c0a93a/",
-  // },
+  {
+    title: "Mastering Next.js with TypeScript",
+    issuer: "Code With Mosh",
+    period: "Aug 2025",
+    link: "https://syed-mubashir-ali-portfolio.vercel.app/next-js-with-ts.pdf",
+  },
+  {
+    title: "Node.js, Express & More: Complete Bootcamp",
+    issuer: "Udemy",
+    period: "Apr 2025",
+    link: "https://www.udemy.com/certificate/UC-a0023ed1-5728-4812-89e8-1657c6e2c4c1/",
+  },
+  {
+    title: "Flutter BLoC — Zero to Hero Complete Course",
+    issuer: "Udemy",
+    period: "May 2024",
+    link: "https://www.udemy.com/certificate/UC-3cce47c1-9f06-4b31-bcfd-e70630c0a93a/",
+  },
 ];
 
 export default function Journey() {
