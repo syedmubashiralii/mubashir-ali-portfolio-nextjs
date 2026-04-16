@@ -12,8 +12,8 @@ const highlights = [
 
 const info = [
   { icon: <MapPin size={14} />, label: "Location", value: "Islamabad, Pakistan" },
-  { icon: <Mail size={14} />, label: "Email", value: "smubashirali620@gmail.com" },
-  { icon: <Smartphone size={14} />, label: "Phone", value: "+92 310 5205275" },
+  { icon: <Mail size={14} />, label: "Email", value: "" },
+  { icon: <Smartphone size={14} />, label: "Phone", value: "" },
 ];
 
 export default function About() {
