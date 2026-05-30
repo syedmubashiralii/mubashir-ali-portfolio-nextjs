@@ -1,95 +1,117 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Mail, Smartphone } from "lucide-react";
+import { CheckCircle2, Mail, MapPin, Phone, Rocket, ShieldCheck, Smartphone } from "lucide-react";
+import Link from "next/link";
+import { contact, focusAreas, stats } from "../data/portfolio";
 
-const highlights = [
-  { value: "4+", label: "Years Experience" },
-  { value: "20+", label: "Apps on Play/App Store" },
-  { value: "5+", label: "Industries Served" },
-  { value: "3", label: "Platforms (Mobile/Web/Desktop)" },
-];
-
-const info = [
-  { icon: <MapPin size={14} />, label: "Location", value: "Islamabad, Pakistan" },
-  { icon: <Mail size={14} />, label: "Email", value: "" },
-  { icon: <Smartphone size={14} />, label: "Phone", value: "" },
+const strengths = [
+  {
+    icon: <Rocket size={18} />,
+    title: "End-to-end delivery",
+    text: "From architecture and implementation through release builds, App Store deployment, and production support.",
+  },
+  {
+    icon: <ShieldCheck size={18} />,
+    title: "Production discipline",
+    text: "Clean architecture, scalable modules, performance-aware code, and pragmatic issue resolution.",
+  },
+  {
+    icon: <Smartphone size={18} />,
+    title: "Cross-platform craft",
+    text: "Mobile, Flutter Web, admin panels, Firebase-backed apps, payment flows, notifications, maps, and media tools.",
+  },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Heading */}
+    <section id="about" className="px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.55 }}
+          className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-            About <span className="text-blue-600 dark:text-blue-400">Me</span>
-          </h2>
-          <p className="mt-3 text-gray-500 dark:text-gray-400 max-w-lg mx-auto text-sm">
-            A brief look at who I am and what drives me professionally.
-          </p>
-        </motion.div>
-
-        {/* Summary Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 md:p-10 shadow-sm"
-        >
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Results-driven{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">Senior Flutter Developer</span> with{" "}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">4+ years</span> of hands-on experience
-            architecting and shipping{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">20+ production-ready applications</span> across
-            fintech, POS, travel, healthcare, and consumer platforms.
-          </p>
-          <p className="mt-4 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Proven ability to own the full development lifecycle — from architecture to App Store deployment — while
-            delivering clean, scalable, and performance-optimized code. Experienced in cross-functional and remote team
-            environments with a strong track record of translating complex business requirements into polished,
-            user-centric solutions across mobile, web, and desktop.
-          </p>
-
-          {/* Contact info row */}
-          <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 flex flex-wrap gap-6">
-            {info.map((item) => (
-              <div key={item.label} className="flex items-center gap-2 text-sm">
-                <span className="text-blue-500">{item.icon}</span>
-                <span className="text-gray-500 dark:text-gray-400">{item.label}:</span>
-                <span className="text-gray-800 dark:text-gray-200 font-medium">{item.value}</span>
-              </div>
-            ))}
+          <div>
+            <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-300">About</p>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-slate-950 sm:text-4xl dark:text-white">
+              Product-focused Flutter engineering with real deployment history.
+            </h2>
           </div>
+          <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
+            Results-driven Senior Flutter Developer with 4+ years of hands-on experience architecting and shipping 20+
+            production-ready applications across fintech, POS, travel, healthcare, and consumer platforms. Experienced
+            in cross-functional and remote teams, with a track record of turning complex business requirements into
+            polished, user-centric products.
+          </p>
         </motion.div>
 
-        {/* Stats Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-          className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {highlights.map((h, i) => (
-            <motion.div
-              key={i}
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 text-center hover:border-blue-300 dark:hover:border-blue-700 transition-colors duration-300"
-            >
-              <p className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">{h.value}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-snug">{h.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="mt-10 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+          >
+            <div className="grid gap-4 sm:grid-cols-3">
+              {strengths.map((item) => (
+                <div key={item.title} className="rounded-lg bg-slate-50 p-4 dark:bg-slate-950">
+                  <div className="mb-3 grid h-9 w-9 place-items-center rounded-lg bg-blue-600 text-white">{item.icon}</div>
+                  <h3 className="text-sm font-semibold text-slate-950 dark:text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{item.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <Link
+                href={`mailto:${contact.email}`}
+                className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 text-sm text-slate-700 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-800 dark:text-slate-300 dark:hover:border-blue-700 dark:hover:text-blue-300"
+              >
+                <Mail size={17} /> Email
+              </Link>
+              <Link
+                href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 text-sm text-slate-700 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-800 dark:text-slate-300 dark:hover:border-blue-700 dark:hover:text-blue-300"
+              >
+                <Phone size={17} /> Call
+              </Link>
+              <div className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 text-sm text-slate-700 dark:border-slate-800 dark:text-slate-300">
+                <MapPin size={17} /> {contact.location}
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="rounded-lg border border-slate-200 bg-slate-950 p-6 text-white shadow-sm dark:border-slate-800"
+          >
+            <h3 className="text-lg font-semibold">Where I create impact</h3>
+            <div className="mt-5 grid grid-cols-2 gap-3">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-lg bg-white/10 p-4">
+                  <p className="text-2xl font-bold">{stat.value}</p>
+                  <p className="mt-1 text-xs text-slate-300">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 space-y-2">
+              {focusAreas.map((area) => (
+                <div key={area} className="flex items-center gap-2 text-sm text-slate-200">
+                  <CheckCircle2 size={16} className="text-emerald-300" />
+                  {area}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
