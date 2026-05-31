@@ -45,7 +45,7 @@ export default function Hero() {
           <div className="relative">
             <div className="relative h-24 w-24 overflow-hidden rounded-full border border-white bg-slate-200 shadow-xl shadow-slate-900/10 ring-4 ring-white dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-900 sm:h-28 sm:w-28">
               <Image
-                src="/syed-mubashir-ali-headshot.jpeg"
+                src="/profile-image.png"
                 alt={contact.name}
                 fill
                 priority
