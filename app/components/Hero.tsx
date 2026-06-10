@@ -89,7 +89,7 @@ export default function Hero() {
               asChild
               className="h-11 rounded-full bg-blue-600 px-6 text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700"
             >
-              <Link href="#contact">
+              <Link href="/portfolio#contact">
                 Start a Conversation <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -107,7 +107,7 @@ export default function Hero() {
               variant="outline"
               className="h-11 rounded-full border-slate-300 bg-white px-6 text-slate-800 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
             >
-              <Link href="#projects">View Projects</Link>
+              <Link href="/portfolio#projects">View Projects</Link>
             </Button>
           </div>
 

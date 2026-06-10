@@ -8,13 +8,13 @@ import { contact } from "../data/portfolio";
 import { cn } from "../utils/utils";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Resume", href: "#resume" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/portfolio#home" },
+  { name: "About", href: "/portfolio#about" },
+  { name: "Experience", href: "/portfolio#experience" },
+  { name: "Skills", href: "/portfolio#skills" },
+  { name: "Projects", href: "/portfolio#projects" },
+  { name: "Resume", href: "/portfolio#resume" },
+  { name: "Contact", href: "/portfolio#contact" },
 ];
 
 export default function Navbar() {
@@ -38,7 +38,7 @@ export default function Navbar() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="#home" className="text-base font-bold text-slate-950 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-300">
+        <Link href="/portfolio#home" className="text-base font-bold text-slate-950 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-300">
           Syed Mubashir Ali
         </Link>
 

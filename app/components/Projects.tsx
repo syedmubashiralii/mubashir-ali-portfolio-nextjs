@@ -114,7 +114,7 @@ export default function Projects() {
                       </Link>
                     )}
                     <Link
-                      href="#contact"
+                      href="/contact"
                       className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500 dark:hover:text-blue-300"
                     >
                       Discuss Similar Work
