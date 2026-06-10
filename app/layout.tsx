@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import Navbar from "@/app/components/Navbar";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,22 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Syed Mubashir Ali — Senior Flutter Developer",
+  metadataBase: new URL("https://syedmubashirali.com"),
+  title: {
+    default: "Syed Mubashir Ali | Senior Flutter Developer",
+    template: "%s | Syed Mubashir Ali",
+  },
   description:
-    "Portfolio of Syed Mubashir Ali — Senior Flutter Developer with 4+ years of experience shipping 20+ production apps across fintech, POS, travel, healthcare, and consumer platforms.",
+    "Senior Flutter Developer building production mobile, web, and desktop products, Flutter packages, and cross-platform applications.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased 
-      bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 
-        transition-colors duration-300 ease-in-out`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-gray-100`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <main >{children}</main>
+          {children}
         </ThemeProvider>
       </body>
     </html>
