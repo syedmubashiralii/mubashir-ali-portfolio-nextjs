@@ -1,44 +1,85 @@
-"use client";
+import type { Metadata } from "next";
+import { BadgeCheck, Github, Linkedin } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import DirectoryCard from "@/app/components/site/DirectoryCard";
+import SiteShell from "@/app/components/site/SiteShell";
+import { contact } from "@/app/data/portfolio";
+import { directoryLinks } from "@/app/data/site";
 
-import { useEffect, useState } from "react";
-import { ArrowUp } from "lucide-react";
-import About from "./components/About";
-import ContactSection from "./components/ContactSection";
-import Hero from "./components/Hero";
-import Journey from "./components/Journey";
-import Projects from "./components/Projects";
-import ResumeViewer from "./components/ResumeViewer";
-import Skills from "./components/Skills";
+export const metadata: Metadata = {
+  title: "Developer, Packages, and Projects",
+  description:
+    "Explore Syed Mubashir Ali's Flutter portfolio, open-source packages, production projects, and contact details.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Syed Mubashir Ali | Senior Flutter Developer",
+    description: "Portfolio, Flutter packages, production projects, and contact details.",
+    url: "/",
+    type: "website",
+  },
+};
 
-export default function Home() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setShowScrollTop(window.scrollY > 520);
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-50">
-      <Hero />
-      <About />
-      <Journey />
-      <Skills />
-      <Projects />
-      <ResumeViewer />
-      <ContactSection />
+    <SiteShell>
+      <section className="relative isolate overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(15,23,42,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.05)_1px,transparent_1px)] bg-[size:48px_48px] dark:bg-[linear-gradient(rgba(148,163,184,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.07)_1px,transparent_1px)]" />
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center">
+            <div className="relative mx-auto h-24 w-24 overflow-hidden rounded-full border-4 border-white bg-slate-200 shadow-xl dark:border-slate-900">
+              <Image
+                src="/profile-image.png"
+                alt={contact.name}
+                fill
+                priority
+                sizes="96px"
+                className="object-cover"
+              />
+            </div>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-300">
+              <BadgeCheck size={14} />
+              Available for selected opportunities
+            </div>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
+              Senior Flutter Developer
+            </p>
+            <h1 className="mx-auto mt-4 max-w-3xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl dark:text-white">
+              Everything I build, in one place.
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-8 text-slate-600 sm:text-lg dark:text-slate-300">
+              Explore my professional experience, reusable Flutter packages, production apps, and ways to work with me.
+            </p>
+          </div>
 
-      {showScrollTop && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-slate-950 text-white shadow-lg shadow-slate-950/20 transition hover:-translate-y-0.5 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-200"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={18} />
-        </button>
-      )}
-    </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {directoryLinks.map((item) => (
+              <DirectoryCard key={item.href} item={item} />
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center gap-3">
+            <Link
+              href={contact.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+            >
+              <Github size={18} />
+            </Link>
+            <Link
+              href={contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+            >
+              <Linkedin size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </SiteShell>
   );
 }
