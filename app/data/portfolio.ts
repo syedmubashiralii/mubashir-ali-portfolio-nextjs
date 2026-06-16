@@ -143,9 +143,10 @@ export const experiences = [
     title: "Flutter Mobile App Developer",
     company: "StackLoop Technologies",
     location: "Islamabad, PK",
-    period: "Jul 2022 - Nov 2023",
+    period: "Jul 2021 - Nov 2023",
     badge: "",
-    documentLink: "/Experience-Letter-StackLoop-Technologies.pdf",
+    // documentLink: "/Experience-Letter-StackLoop-Technologies.pdf",
+    documentLink: "",
     highlights: [
       "Developed and published 20+ Flutter applications to Google Play and Apple App Store.",
       "Delivered AI-powered image processing apps for enhancement, background removal, and sketch effects.",

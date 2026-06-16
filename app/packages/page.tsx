@@ -4,6 +4,14 @@ import Link from "next/link";
 import SiteShell from "@/app/components/site/SiteShell";
 import { packages } from "@/app/data/site";
 
+function getStatusBadgeClassName(status: string) {
+  if (status === "Published") {
+    return "rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300";
+  }
+
+  return "rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300";
+}
+
 export const metadata: Metadata = {
   title: "Flutter Packages",
   description: "Flutter plugins, packages, and reusable developer tools built by Syed Mubashir Ali.",
@@ -41,7 +49,7 @@ export default function PackagesPage() {
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-blue-600 text-white">
                     <PackageOpen size={22} />
                   </span>
-                  <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+                  <span className={getStatusBadgeClassName(item.status)}>
                     {item.status}
                   </span>
                 </div>

@@ -1,0 +1,83 @@
+<svg width="1200" height="627" viewBox="0 0 1200 627" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">system_contact_picker LinkedIn package visual</title>
+  <desc id="desc">A LinkedIn social card for the system_contact_picker Flutter package with package links.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="627" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111F"/>
+      <stop offset="0.5" stop-color="#0F2742"/>
+      <stop offset="1" stop-color="#07231F"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="270" y1="72" x2="984" y2="582" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="0.52" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="774" y1="115" x2="1038" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#D8E3F1"/>
+    </linearGradient>
+    <filter id="softShadow" x="0" y="0" width="1200" height="627" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#020617" flood-opacity="0.34"/>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="627" fill="url(#bg)"/>
+  <rect width="1200" height="627" fill="url(#grid)"/>
+  <circle cx="1054" cy="80" r="214" fill="#14B8A6" opacity="0.13"/>
+  <circle cx="148" cy="540" r="190" fill="#3B82F6" opacity="0.12"/>
+  <path d="M64 100C64 71.2812 87.2812 48 116 48H1084C1112.72 48 1136 71.2812 1136 100V527C1136 555.719 1112.72 579 1084 579H116C87.2812 579 64 555.719 64 527V100Z" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <path d="M101 110C101 94.536 113.536 82 129 82H1071C1086.46 82 1099 94.536 1099 110V517C1099 532.464 1086.46 545 1071 545H129C113.536 545 101 532.464 101 517V110Z" fill="#071525" fill-opacity="0.74"/>
+
+  <g transform="translate(132 112)">
+    <rect x="0" y="0" width="268" height="42" rx="21" fill="#0EA5E9" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.45"/>
+    <circle cx="26" cy="21" r="8" fill="#22C55E"/>
+    <text x="44" y="27" fill="#BAE6FD" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Flutter package • pub.dev</text>
+
+    <text x="0" y="118" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800">system_contact_picker</text>
+    <text x="0" y="168" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="500">Native contact picker for Flutter apps.</text>
+    <text x="0" y="209" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="500">Android 17+ • legacy Android • iOS ContactsUI</text>
+
+    <g transform="translate(0 258)">
+      <rect width="560" height="78" rx="18" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.28"/>
+      <text x="26" y="32" fill="#93C5FD" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Install</text>
+      <text x="26" y="58" fill="#F8FAFC" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="25" font-weight="700">system_contact_picker: ^0.0.2</text>
+    </g>
+
+    <g transform="translate(0 364)">
+      <rect width="506" height="50" rx="25" fill="#2563EB"/>
+      <text x="25" y="32" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">pub.dev/packages/system_contact_picker</text>
+      <rect x="0" y="64" width="342" height="50" rx="25" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="25" y="96" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">syedmubashirali.com/packages</text>
+    </g>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="842" y="108" width="230" height="406" rx="42" fill="url(#phone)"/>
+    <rect x="858" y="128" width="198" height="366" rx="30" fill="#F8FAFC"/>
+    <rect x="906" y="140" width="102" height="10" rx="5" fill="#CBD5E1"/>
+    <text x="891" y="203" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Contacts</text>
+    <rect x="891" y="226" width="134" height="42" rx="21" fill="#DBEAFE"/>
+    <circle cx="913" cy="247" r="12" fill="#2563EB"/>
+    <text x="938" y="254" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">System UI</text>
+
+    <g transform="translate(891 298)">
+      <circle cx="24" cy="24" r="24" fill="#14B8A6"/>
+      <text x="62" y="20" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">Native picker</text>
+      <text x="62" y="46" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Uses system UI</text>
+    </g>
+    <g transform="translate(891 372)">
+      <circle cx="24" cy="24" r="24" fill="#F59E0B"/>
+      <text x="62" y="20" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">Multi-platform</text>
+      <text x="62" y="46" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Android and iOS</text>
+    </g>
+
+    <rect x="891" y="456" width="134" height="36" rx="18" fill="url(#accent)"/>
+    <text x="912" y="480" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">Pick contact</text>
+  </g>
+
+  <text x="104" y="595" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Built by Syed Mubashir Ali</text>
+  <text x="902" y="595" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Open-source Flutter utility</text>
+</svg>

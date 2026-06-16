@@ -15,9 +15,9 @@ describe("site data", () => {
     expect(packages).toContainEqual(
       expect.objectContaining({
         slug: "system-contact-picker",
-        status: "In development",
+        status: "Published",
         githubUrl: "https://github.com/syedmubashiralii/system_contact_picker",
-        pubUrl: null,
+        pubUrl: "https://pub.dev/packages/system_contact_picker",
       }),
     );
   });

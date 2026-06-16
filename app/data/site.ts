@@ -52,10 +52,10 @@ export const packages: FlutterPackage[] = [
     name: "system_contact_picker",
     description:
       "Native Flutter contact picker for Android 17+, legacy Android devices, and iOS ContactsUI.",
-    status: "In development",
+    status: "Published",
     tags: ["Flutter", "Android", "iOS", "Native APIs"],
     githubUrl: "https://github.com/syedmubashiralii/system_contact_picker",
-    pubUrl: null,
+    pubUrl: "https://pub.dev/packages/system_contact_picker",
   },
 ];
 
