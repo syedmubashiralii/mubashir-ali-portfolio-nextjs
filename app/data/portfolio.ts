@@ -14,7 +14,7 @@ export const contact = {
 };
 
 export const stats = [
-  { value: "4+", label: "Years Experience" },
+  { value: "5+", label: "Years Experience" },
   { value: "20+", label: "Production Apps" },
   { value: "5+", label: "Industries" },
   { value: "3", label: "Platforms" },

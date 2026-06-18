@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import JsonLd from "@/app/components/site/JsonLd";
+import { buildPersonJsonLd, buildServiceJsonLd, buildWebsiteJsonLd, siteMetadata } from "@/app/data/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,15 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://syedmubashirali.com"),
-  title: {
-    default: "Syed Mubashir Ali | Senior Flutter Developer",
-    template: "%s | Syed Mubashir Ali",
-  },
-  description:
-    "Senior Flutter Developer building production mobile, web, and desktop products, Flutter packages, and cross-platform applications.",
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -30,6 +24,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-gray-100`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <JsonLd id="person-jsonld" data={buildPersonJsonLd()} />
+          <JsonLd id="website-jsonld" data={buildWebsiteJsonLd()} />
+          <JsonLd id="service-jsonld" data={buildServiceJsonLd()} />
           {children}
         </ThemeProvider>
       </body>

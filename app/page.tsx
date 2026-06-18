@@ -4,21 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import DirectoryCard from "@/app/components/site/DirectoryCard";
 import SiteShell from "@/app/components/site/SiteShell";
+import { homeMetadata } from "@/app/data/seo";
 import { contact } from "@/app/data/portfolio";
-import { directoryLinks } from "@/app/data/site";
+import { directoryLinks, leadServices } from "@/app/data/site";
 
-export const metadata: Metadata = {
-  title: "Developer, Packages, and Projects",
-  description:
-    "Explore Syed Mubashir Ali's Flutter portfolio, open-source packages, production projects, and contact details.",
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "Syed Mubashir Ali | Senior Flutter Developer",
-    description: "Portfolio, Flutter packages, production projects, and contact details.",
-    url: "/",
-    type: "website",
-  },
-};
+export const metadata: Metadata = homeMetadata;
 
 export default function HomePage() {
   return (
@@ -39,17 +29,30 @@ export default function HomePage() {
             </div>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-300">
               <BadgeCheck size={14} />
-              Available for selected opportunities
+              Available for selected Flutter projects
             </div>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
-              Senior Flutter Developer
+              Senior Flutter Developer for production teams
             </p>
             <h1 className="mx-auto mt-4 max-w-3xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl dark:text-white">
-              Everything I build, in one place.
+              Hire a Flutter developer who can ship, rescue, and scale your app.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-8 text-slate-600 sm:text-lg dark:text-slate-300">
-              Explore my professional experience, reusable Flutter packages, production apps, and ways to work with me.
+              I help founders, agencies, and product teams build reliable Flutter apps across fintech, telecom, POS,
+              marketplaces, dashboards, and store-ready mobile products.
             </p>
+          </div>
+
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {leadServices.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-lg border border-slate-200 bg-white/85 p-4 text-left shadow-sm dark:border-slate-800 dark:bg-slate-900/80"
+              >
+                <h2 className="text-sm font-bold text-slate-950 dark:text-white">{service.title}</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.description}</p>
+              </article>
+            ))}
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2">

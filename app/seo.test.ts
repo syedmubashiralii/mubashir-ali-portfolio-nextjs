@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
 import nextConfig from "../next.config";
+import { metadata as contactMetadata } from "./contact/page";
+import { metadata as homeMetadata } from "./page";
+import { metadata as packagesMetadata } from "./packages/page";
+import { metadata as projectsMetadata } from "./projects/page";
 import robots from "./robots";
 import sitemap from "./sitemap";
 
@@ -29,5 +33,13 @@ describe("SEO configuration", () => {
       destination: "https://syedmubashirali.com/:path*",
       permanent: true,
     });
+  });
+
+  it("targets qualified Flutter project leads in route metadata", () => {
+    expect(homeMetadata.title).toBe("Hire Senior Flutter Developer for Production Apps");
+    expect(String(homeMetadata.description).toLowerCase()).toContain("hire a senior flutter developer");
+    expect(projectsMetadata.description).toContain("fintech, telecom, POS");
+    expect(packagesMetadata.description).toContain("Flutter plugin development");
+    expect(contactMetadata.description).toContain("Start a Flutter project");
   });
 });

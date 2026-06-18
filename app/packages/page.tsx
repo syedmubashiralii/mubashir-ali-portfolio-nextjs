@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { ExternalLink, Github, PackageOpen } from "lucide-react";
 import Link from "next/link";
+import JsonLd from "@/app/components/site/JsonLd";
 import SiteShell from "@/app/components/site/SiteShell";
+import { buildPackageListJsonLd, packagesMetadata } from "@/app/data/seo";
 import { packages } from "@/app/data/site";
 
 function getStatusBadgeClassName(status: string) {
@@ -12,21 +14,12 @@ function getStatusBadgeClassName(status: string) {
   return "rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300";
 }
 
-export const metadata: Metadata = {
-  title: "Flutter Packages",
-  description: "Flutter plugins, packages, and reusable developer tools built by Syed Mubashir Ali.",
-  alternates: { canonical: "/packages" },
-  openGraph: {
-    title: "Flutter Packages | Syed Mubashir Ali",
-    description: "Cross-platform Flutter plugins and reusable developer tools.",
-    url: "/packages",
-    type: "website",
-  },
-};
+export const metadata: Metadata = packagesMetadata;
 
 export default function PackagesPage() {
   return (
     <SiteShell>
+      <JsonLd id="packages-jsonld" data={buildPackageListJsonLd()} />
       <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-600 dark:text-blue-300">

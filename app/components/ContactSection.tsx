@@ -49,13 +49,13 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="text-sm font-semibold uppercase text-blue-300">Contact</p>
+          <p className="text-sm font-semibold uppercase text-blue-300">Start a Flutter project</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
-            Have a Flutter product, app rescue, or delivery problem to solve?
+            Need a Flutter product built, rescued, or shipped?
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-300">
-            Send a message through WhatsApp, email directly, or connect on LinkedIn. The form opens WhatsApp with your
-            message pre-filled so the contact path stays simple and reliable.
+            Share the app idea, broken flow, deadline, or release blocker. The form opens WhatsApp with your message
+            pre-filled, so the fastest path from search visitor to project conversation stays simple.
           </p>
 
           <div className="mt-8 space-y-3">

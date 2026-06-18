@@ -10,29 +10,44 @@ export type DirectoryLink = {
 export const directoryLinks: DirectoryLink[] = [
   {
     title: "Portfolio",
-    description: "Experience, skills, selected work, and resume.",
+    description: "Senior Flutter experience, skills, selected work, and resume.",
     href: "/portfolio",
     icon: "briefcase",
   },
   {
     title: "Flutter Packages",
-    description: "Reusable Flutter plugins, libraries, and developer tools.",
+    description: "Reusable Flutter plugins, native integrations, and Dart tools.",
     href: "/packages",
     icon: "package",
   },
   {
     title: "Apps & Projects",
-    description: "Production apps and selected product work.",
+    description: "Production Flutter apps across fintech, POS, telecom, and more.",
     href: "/projects",
     icon: "panels",
   },
   {
     title: "Contact",
-    description: "Email, WhatsApp, social profiles, and resume.",
+    description: "Start a Flutter project through WhatsApp, email, or LinkedIn.",
     href: "/contact",
     icon: "mail",
   },
 ];
+
+export const leadServices = [
+  {
+    title: "Build from zero",
+    description: "MVPs, production apps, Flutter Web dashboards, Firebase backends, and store releases.",
+  },
+  {
+    title: "Rescue an app",
+    description: "Debug crashes, fix slow flows, harden architecture, and get blocked releases moving again.",
+  },
+  {
+    title: "Scale delivery",
+    description: "Senior Flutter support for fintech, telecom, POS, marketplaces, and agency delivery teams.",
+  },
+] as const;
 
 export type PackageStatus = "Published" | "In development" | "Coming soon";
 
