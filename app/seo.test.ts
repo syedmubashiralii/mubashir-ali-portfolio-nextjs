@@ -35,11 +35,11 @@ describe("SEO configuration", () => {
     });
   });
 
-  it("targets qualified Flutter project leads in route metadata", () => {
-    expect(homeMetadata.title).toBe("Hire Senior Flutter Developer for Production Apps");
-    expect(String(homeMetadata.description).toLowerCase()).toContain("hire a senior flutter developer");
+  it("targets qualified app development leads in route metadata", () => {
+    expect(homeMetadata.title).toBe("Hire Senior Mobile, Web & Desktop App Developer");
+    expect(String(homeMetadata.description).toLowerCase()).toContain("senior mobile, web, and desktop app developer");
     expect(projectsMetadata.description).toContain("fintech, telecom, POS");
-    expect(packagesMetadata.description).toContain("Flutter plugin development");
-    expect(contactMetadata.description).toContain("Start a Flutter project");
+    expect(packagesMetadata.description).toContain("Nexio networking runtime");
+    expect(contactMetadata.description).toContain("Start a mobile, web, or desktop app project");
   });
 });

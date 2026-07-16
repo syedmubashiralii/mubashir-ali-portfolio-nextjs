@@ -19,7 +19,7 @@ const strengths = [
   {
     icon: <Smartphone size={18} />,
     title: "Cross-platform craft",
-    text: "Mobile, Flutter Web, admin panels, Firebase-backed apps, payment flows, notifications, maps, and media tools.",
+    text: "Flutter, React Native, native iOS and Android, responsive web, desktop, payments, maps, and media tools.",
   },
 ];
 
@@ -37,14 +37,13 @@ export default function About() {
           <div>
             <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-300">About</p>
             <h2 className="mt-3 text-3xl font-bold leading-tight text-slate-950 sm:text-4xl dark:text-white">
-              Product-focused Flutter engineering with real deployment history.
+              Product-focused app engineering across every major screen.
             </h2>
           </div>
           <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-            Results-driven Senior Flutter Developer with 4+ years of hands-on experience architecting and shipping 20+
-            production-ready applications across fintech, POS, travel, healthcare, and consumer platforms. Experienced
-            in cross-functional and remote teams, with a track record of turning complex business requirements into
-            polished, user-centric products.
+            Results-driven app developer with 5+ years of hands-on experience architecting and shipping 20+
+            production-ready mobile, web, and desktop applications. Deep Flutter expertise is complemented by React
+            Native, native Android and iOS delivery, and modern web development for complete product ownership.
           </p>
         </motion.div>
 

@@ -29,17 +29,17 @@ export default function HomePage() {
             </div>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-300">
               <BadgeCheck size={14} />
-              Available for selected Flutter projects
+              Available for selected app development projects
             </div>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
-              Senior Flutter Developer for production teams
+              Mobile · Web · Desktop app development
             </p>
             <h1 className="mx-auto mt-4 max-w-3xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl dark:text-white">
-              Hire a Flutter developer who can ship, rescue, and scale your app.
+              Hire an app developer who can ship, rescue, and scale your product.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-8 text-slate-600 sm:text-lg dark:text-slate-300">
-              I help founders, agencies, and product teams build reliable Flutter apps across fintech, telecom, POS,
-              marketplaces, dashboards, and store-ready mobile products.
+              I help founders, agencies, and product teams build reliable products with Flutter, React Native, native
+              iOS and Android, Next.js, and desktop-ready cross-platform technology.
             </p>
           </div>
 

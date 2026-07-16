@@ -24,9 +24,9 @@ const socialLinks = [
 ];
 
 const proofPoints = [
-  "Production Flutter apps",
-  "Fintech and telecom delivery",
-  "Store release ownership",
+  "Flutter & React Native",
+  "Native iOS & Android",
+  "Web & desktop delivery",
 ];
 
 export default function Hero() {
@@ -58,18 +58,18 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-6 inline-flex max-w-full items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-sm dark:border-blue-900 dark:bg-slate-900 dark:text-blue-300">
+          <div className="mt-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-center text-xs font-semibold text-blue-700 shadow-sm dark:border-blue-900 dark:bg-slate-900 dark:text-blue-300">
             <Sparkles size={14} />
             {contact.role} | {contact.tagline}
           </div>
 
           <h1 className="mt-6 max-w-4xl text-balance text-3xl font-bold leading-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
-            I build polished Flutter products that survive real users, deadlines, and production scale.
+            I build polished mobile, web, and desktop apps that survive real users and production scale.
           </h1>
 
           <p className="mt-5 max-w-2xl text-pretty text-base leading-8 text-slate-700 sm:text-lg dark:text-slate-300">
-            {contact.name} is a Senior Flutter Developer with 4+ years of experience shipping mobile, web, and desktop
-            apps across fintech, telecom, POS, travel, healthcare, and consumer platforms.
+            {contact.name} is a senior app developer with 5+ years of experience shipping Flutter, React Native,
+            native iOS and Android, web, and desktop products across fintech, telecom, POS, travel, and healthcare.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-2">

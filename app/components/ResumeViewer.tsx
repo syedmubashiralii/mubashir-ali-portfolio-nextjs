@@ -51,7 +51,7 @@ export default function ResumeViewer() {
               </div>
               <div>
                 <h3 className="font-semibold">Syed Mubashir Ali Resume</h3>
-                <p className="text-xs text-slate-300">Senior Flutter Developer | Mobile · Web · Desktop</p>
+                <p className="text-xs text-slate-300">Senior Mobile, Web &amp; Desktop App Developer</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2">

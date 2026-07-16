@@ -1,7 +1,7 @@
 export const contact = {
   name: "Syed Mubashir Ali",
-  role: "Senior Flutter Developer",
-  tagline: "Mobile · Web · Desktop",
+  role: "Senior Mobile, Web & Desktop App Developer",
+  tagline: "Flutter · React Native · Native iOS & Android",
   email: "smubashirali620@gmail.com",
   phone: "+92 310 5205275",
   whatsapp: "923105205275",
@@ -17,7 +17,7 @@ export const stats = [
   { value: "5+", label: "Years Experience" },
   { value: "20+", label: "Production Apps" },
   { value: "5+", label: "Industries" },
-  { value: "3", label: "Platforms" },
+  { value: "4", label: "Delivery Platforms" },
 ];
 
 export const focusAreas = [
@@ -25,6 +25,8 @@ export const focusAreas = [
   "Telecom self-care",
   "POS and inventory",
   "Flutter Web admin panels",
+  "React Native & native apps",
+  "Web & desktop products",
   "ML/media apps",
   "Store deployment",
 ];
@@ -32,7 +34,16 @@ export const focusAreas = [
 export const skillCategories = [
   {
     title: "Core Technologies",
-    skills: ["Flutter", "Dart", "Firebase Firestore", "Firebase Auth", "Firebase Analytics", "Crashlytics", "Cloud Messaging"],
+    skills: [
+      "Flutter",
+      "Dart",
+      "React Native",
+      "Native Android",
+      "Native iOS",
+      "Kotlin",
+      "Swift",
+      "Firebase",
+    ],
   },
   {
     title: "State Management",
@@ -166,22 +177,36 @@ export const education = {
 
 export const certifications = [
   {
+    title: "Claude Code for Professional Developers",
+    issuer: "Code With Mosh",
+    period: "Jun 2026",
+    credentialId: "cert_7by1h60w",
+    link: "https://www.linkedin.com/in/syed-mubashir-ali-796122177/overlay/756344291/skill-associations-details/",
+    featured: true,
+  },
+  {
     title: "Mastering Next.js with TypeScript",
     issuer: "Code With Mosh",
     period: "Aug 2025",
     link: "/next-js-with-ts.pdf",
+    credentialId: "",
+    featured: false,
   },
   {
     title: "Node.js, Express & More: Complete Bootcamp",
     issuer: "Udemy",
     period: "Apr 2025",
     link: "https://www.udemy.com/certificate/UC-a0023ed1-5728-4812-89e8-1657c6e2c4c1/",
+    credentialId: "",
+    featured: false,
   },
   {
     title: "Flutter BLoC - Zero to Hero Complete Course",
     issuer: "Udemy",
     period: "May 2024",
     link: "https://www.udemy.com/certificate/UC-3cce47c1-9f06-4b31-bcfd-e70630c0a93a/",
+    credentialId: "",
+    featured: false,
   },
 ];
 

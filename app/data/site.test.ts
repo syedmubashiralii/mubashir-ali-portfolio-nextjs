@@ -14,6 +14,16 @@ describe("site data", () => {
   it("publishes only confirmed package links", () => {
     expect(packages).toContainEqual(
       expect.objectContaining({
+        slug: "nexio",
+        status: "Published",
+        publisher: "syedmubashirali.com",
+        version: "0.2.0",
+        githubUrl: "https://github.com/syedmubashiralii/nexio",
+        pubUrl: "https://pub.dev/packages/nexio",
+      }),
+    );
+    expect(packages).toContainEqual(
+      expect.objectContaining({
         slug: "system-contact-picker",
         status: "Published",
         githubUrl: "https://github.com/syedmubashiralii/system_contact_picker",

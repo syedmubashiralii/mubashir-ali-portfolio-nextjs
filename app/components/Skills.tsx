@@ -34,11 +34,11 @@ export default function Skills() {
         >
           <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-300">Skills</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl dark:text-white">
-            A toolkit for full product delivery.
+            One toolkit for mobile, web, and desktop delivery.
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Mobile foundations, backend integration, payments, notifications, media tooling, monetization, and release
-            workflows.
+            Flutter and Dart expertise with React Native, native Android and iOS, modern web development, backend
+            integration, payments, media tooling, and production release workflows.
           </p>
         </motion.div>
 

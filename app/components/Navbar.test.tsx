@@ -6,7 +6,8 @@ describe("Navbar", () => {
   it("uses route-aware portfolio anchors", () => {
     render(<Navbar />);
 
-    expect(screen.getAllByRole("link", { name: "Home" })[0]).toHaveAttribute("href", "/portfolio#home");
+    expect(screen.getAllByRole("link", { name: /Back to main site/i })[0]).toHaveAttribute("href", "/");
+    expect(screen.getAllByRole("link", { name: "Overview" })[0]).toHaveAttribute("href", "/portfolio#home");
     expect(screen.getAllByRole("link", { name: "Projects" })[0]).toHaveAttribute(
       "href",
       "/portfolio#projects",

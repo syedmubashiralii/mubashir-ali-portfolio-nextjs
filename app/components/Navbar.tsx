@@ -1,14 +1,14 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Download, Menu, X } from "lucide-react";
+import { ArrowLeft, Download, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { contact } from "../data/portfolio";
 import { cn } from "../utils/utils";
 
 const navLinks = [
-  { name: "Home", href: "/portfolio#home" },
+  { name: "Overview", href: "/portfolio#home" },
   { name: "About", href: "/portfolio#about" },
   { name: "Experience", href: "/portfolio#experience" },
   { name: "Skills", href: "/portfolio#skills" },
@@ -38,9 +38,22 @@ export default function Navbar() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/portfolio#home" className="text-base font-bold text-slate-950 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-300">
-          Syed Mubashir Ali
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="inline-flex h-10 items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 text-sm font-bold text-blue-700 shadow-sm transition hover:-translate-x-0.5 hover:border-blue-400 hover:bg-blue-100 dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:bg-blue-950"
+            aria-label="Back to main site"
+          >
+            <ArrowLeft size={16} />
+            <span className="hidden sm:inline">Main site</span>
+          </Link>
+          <Link
+            href="/portfolio#home"
+            className="text-sm font-bold text-slate-950 transition hover:text-blue-600 sm:text-base md:hidden lg:inline-flex dark:text-white dark:hover:text-blue-300"
+          >
+            Syed Mubashir Ali
+          </Link>
+        </div>
 
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -106,6 +119,13 @@ export default function Navbar() {
             className="absolute left-4 right-4 top-full mt-2 rounded-lg border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-950 md:hidden"
           >
             <nav className="grid gap-1">
+              <Link
+                href="/"
+                onClick={() => setMenuOpen(false)}
+                className="mb-2 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2.5 text-sm font-bold text-white transition hover:bg-blue-700"
+              >
+                <ArrowLeft size={16} /> Back to main site
+              </Link>
               {navLinks.map((link) => (
                 <Link
                   key={link.name}

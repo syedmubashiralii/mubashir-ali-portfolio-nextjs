@@ -49,13 +49,14 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="text-sm font-semibold uppercase text-blue-300">Start a Flutter project</p>
+          <p className="text-sm font-semibold uppercase text-blue-300">Start an app project</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
-            Need a Flutter product built, rescued, or shipped?
+            Need a mobile, web, or desktop product built, rescued, or shipped?
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-300">
-            Share the app idea, broken flow, deadline, or release blocker. The form opens WhatsApp with your message
-            pre-filled, so the fastest path from search visitor to project conversation stays simple.
+            Share the idea, platform, broken flow, deadline, or release blocker. I can support Flutter, React Native,
+            native iOS or Android, modern web apps, and desktop delivery. The form opens WhatsApp with your message
+            pre-filled for a fast project conversation.
           </p>
 
           <div className="mt-8 space-y-3">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, BriefcaseBusiness, Calendar, ExternalLink, GraduationCap, MapPin } from "lucide-react";
+import { Award, BadgeCheck, BriefcaseBusiness, Calendar, ExternalLink, GraduationCap, MapPin, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { certifications, education, experiences } from "../data/portfolio";
 
@@ -127,21 +127,52 @@ export default function Journey() {
               </div>
               <h3 className="text-lg font-bold text-slate-950 dark:text-white">Certifications</h3>
             </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {certifications.map((certification) => (
                 <Link
                   key={certification.title}
                   href={certification.link}
                   target="_blank"
-                  className="rounded-lg border border-amber-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-amber-400 dark:border-amber-900/60 dark:bg-slate-950 dark:hover:border-amber-600"
+                  rel="noopener noreferrer"
+                  className={`group relative overflow-hidden rounded-xl border p-4 transition hover:-translate-y-1 hover:shadow-lg ${
+                    certification.featured
+                      ? "sm:col-span-2 border-violet-300 bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-700 text-white shadow-lg shadow-violet-900/20 hover:border-violet-200"
+                      : "border-amber-200 bg-white hover:border-amber-400 dark:border-amber-900/60 dark:bg-slate-950 dark:hover:border-amber-600"
+                  }`}
                 >
-                  <p className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">{certification.title}</p>
-                  <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                    {certification.issuer} · {certification.period}
-                  </p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
-                    View <ExternalLink size={12} />
-                  </span>
+                  {certification.featured ? (
+                    <div className="relative grid gap-4 sm:grid-cols-[auto_1fr_auto] sm:items-center">
+                      <div className="relative grid h-14 w-14 place-items-center rounded-2xl bg-white/15 ring-1 ring-white/25 backdrop-blur">
+                        <span className="text-xl font-black">M</span>
+                        <Sparkles className="absolute -right-1 -top-1 text-pink-200" size={16} />
+                      </div>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-blue-100">
+                          <span>Code With Mosh</span>
+                          <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2 py-1 text-white ring-1 ring-white/20">
+                            <BadgeCheck size={12} /> New certification
+                          </span>
+                        </div>
+                        <p className="mt-2 text-lg font-bold leading-6">{certification.title}</p>
+                        <p className="mt-2 text-xs text-blue-100">
+                          Issued {certification.period} · Credential ID {certification.credentialId}
+                        </p>
+                      </div>
+                      <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-3 py-2 text-xs font-bold text-indigo-700 transition group-hover:bg-blue-50">
+                        View credential <ExternalLink size={12} />
+                      </span>
+                    </div>
+                  ) : (
+                    <>
+                      <p className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">{certification.title}</p>
+                      <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                        {certification.issuer} · {certification.period}
+                      </p>
+                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
+                        View <ExternalLink size={12} />
+                      </span>
+                    </>
+                  )}
                 </Link>
               ))}
             </div>

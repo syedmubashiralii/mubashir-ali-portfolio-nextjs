@@ -10,7 +10,7 @@ export type DirectoryLink = {
 export const directoryLinks: DirectoryLink[] = [
   {
     title: "Portfolio",
-    description: "Senior Flutter experience, skills, selected work, and resume.",
+    description: "Mobile, web, and desktop app experience, skills, certifications, and resume.",
     href: "/portfolio",
     icon: "briefcase",
   },
@@ -22,13 +22,13 @@ export const directoryLinks: DirectoryLink[] = [
   },
   {
     title: "Apps & Projects",
-    description: "Production Flutter apps across fintech, POS, telecom, and more.",
+    description: "Production mobile, web, and desktop apps across fintech, POS, telecom, and more.",
     href: "/projects",
     icon: "panels",
   },
   {
     title: "Contact",
-    description: "Start a Flutter project through WhatsApp, email, or LinkedIn.",
+    description: "Start a mobile, web, or desktop app project through WhatsApp, email, or LinkedIn.",
     href: "/contact",
     icon: "mail",
   },
@@ -36,16 +36,16 @@ export const directoryLinks: DirectoryLink[] = [
 
 export const leadServices = [
   {
-    title: "Build from zero",
-    description: "MVPs, production apps, Flutter Web dashboards, Firebase backends, and store releases.",
+    title: "Mobile apps",
+    description: "Flutter, React Native, native Android, and native iOS products from MVP to store release.",
   },
   {
-    title: "Rescue an app",
-    description: "Debug crashes, fix slow flows, harden architecture, and get blocked releases moving again.",
+    title: "Web & desktop",
+    description: "Responsive web apps, admin dashboards, and desktop products with production-ready architecture.",
   },
   {
-    title: "Scale delivery",
-    description: "Senior Flutter support for fintech, telecom, POS, marketplaces, and agency delivery teams.",
+    title: "Build, rescue & scale",
+    description: "Senior engineering support for new builds, difficult bugs, performance, and blocked releases.",
   },
 ] as const;
 
@@ -59,9 +59,25 @@ export type FlutterPackage = {
   tags: string[];
   githubUrl: string | null;
   pubUrl: string | null;
+  publisher: string | null;
+  version: string | null;
+  featured?: boolean;
 };
 
 export const packages: FlutterPackage[] = [
+  {
+    slug: "nexio",
+    name: "nexio",
+    description:
+      "A production-grade Flutter networking runtime for Dio with environments, encryption, isolate parsing, retries, caching, offline queues, transfers, and observability.",
+    status: "Published",
+    tags: ["Flutter", "Dio", "Networking", "Caching", "Observability"],
+    githubUrl: "https://github.com/syedmubashiralii/nexio",
+    pubUrl: "https://pub.dev/packages/nexio",
+    publisher: "syedmubashirali.com",
+    version: "0.2.0",
+    featured: true,
+  },
   {
     slug: "system-contact-picker",
     name: "system_contact_picker",
@@ -71,6 +87,8 @@ export const packages: FlutterPackage[] = [
     tags: ["Flutter", "Android", "iOS", "Native APIs"],
     githubUrl: "https://github.com/syedmubashiralii/system_contact_picker",
     pubUrl: "https://pub.dev/packages/system_contact_picker",
+    publisher: "syedmubashirali.com",
+    version: null,
   },
 ];
 

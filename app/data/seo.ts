@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact, focusAreas, projects, skillCategories } from "./portfolio";
+import { certifications, contact, focusAreas, projects, skillCategories } from "./portfolio";
 import { packages } from "./site";
 
 export const siteUrl = "https://syedmubashirali.com";
@@ -9,9 +9,16 @@ const profileImageUrl = `${siteUrl}${profileImage}`;
 const siteName = "Syed Mubashir Ali";
 
 export const seoKeywords = [
+  "Senior Mobile App Developer",
+  "mobile app developer",
   "Senior Flutter Developer",
   "hire Flutter developer",
   "Flutter app development",
+  "React Native developer",
+  "native Android developer",
+  "native iOS developer",
+  "web app developer",
+  "desktop app developer",
   "Flutter fintech developer",
   "Flutter telecom app developer",
   "Flutter POS developer",
@@ -22,7 +29,7 @@ export const seoKeywords = [
 ];
 
 const leadDescription =
-  "Hire a Senior Flutter Developer for production mobile, web, and desktop apps across fintech, telecom, POS, travel, healthcare, marketplaces, and app rescue work.";
+  "Hire a senior mobile, web, and desktop app developer for Flutter, React Native, native iOS and Android, Next.js, production delivery, and app rescue work.";
 
 function routeUrl(path: string) {
   return `${siteUrl}${path === "/" ? "" : path}`;
@@ -73,7 +80,7 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Hire Senior Flutter Developer | Syed Mubashir Ali",
+    default: "Hire Senior App Developer | Syed Mubashir Ali",
     template: `%s | ${siteName}`,
   },
   description: leadDescription,
@@ -94,7 +101,7 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Hire Senior Flutter Developer | Syed Mubashir Ali",
+    title: "Hire Senior App Developer | Syed Mubashir Ali",
     description: leadDescription,
     url: siteUrl,
     siteName,
@@ -111,29 +118,29 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hire Senior Flutter Developer | Syed Mubashir Ali",
+    title: "Hire Senior App Developer | Syed Mubashir Ali",
     description: leadDescription,
     images: [profileImage],
   },
 };
 
 export const homeMetadata = createPageMetadata({
-  title: "Hire Senior Flutter Developer for Production Apps",
+  title: "Hire Senior Mobile, Web & Desktop App Developer",
   description: leadDescription,
   path: "/",
 });
 
 export const portfolioMetadata = createPageMetadata({
-  title: "Flutter Developer Portfolio",
+  title: "Mobile, Web & Desktop App Developer Portfolio",
   description:
-    "Review Syed Mubashir Ali's Flutter experience, production projects, certifications, skills, resume, and delivery proof for senior mobile app work.",
+    "Review Syed Mubashir Ali's mobile, web, and desktop development experience, production projects, certifications, skills, resume, and delivery proof.",
   path: "/portfolio",
 });
 
 export const packagesMetadata = createPageMetadata({
   title: "Flutter Packages and Plugins",
   description:
-    "Explore Flutter plugin development and reusable Dart packages by Syed Mubashir Ali, including native Android and iOS contact picker tooling.",
+    "Explore Flutter packages by verified publisher syedmubashirali.com, including the Nexio networking runtime and native Android and iOS contact picker tooling.",
   path: "/packages",
 });
 
@@ -145,9 +152,9 @@ export const projectsMetadata = createPageMetadata({
 });
 
 export const contactMetadata = createPageMetadata({
-  title: "Start a Flutter Project",
+  title: "Start a Mobile, Web or Desktop App Project",
   description:
-    "Start a Flutter project with Syed Mubashir Ali for app development, product delivery, Flutter Web, app rescue, or senior engineering support.",
+    "Start a mobile, web, or desktop app project with Syed Mubashir Ali for Flutter, React Native, native development, app rescue, or senior engineering support.",
   path: "/contact",
 });
 
@@ -158,6 +165,11 @@ const knowsAbout = [
   "Telecom self-care",
   "POS systems",
   "Flutter Web",
+  "React Native",
+  "Native Android development",
+  "Native iOS development",
+  "Web app development",
+  "Desktop app development",
   "Firebase",
   "Mobile app architecture",
   "App Store deployment",
@@ -187,6 +199,16 @@ export function buildPersonJsonLd() {
       name: contact.role,
       skills: skillCategories.flatMap((category) => category.skills).slice(0, 32),
     },
+    hasCredential: certifications.map((certification) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: certification.title,
+      recognizedBy: {
+        "@type": "Organization",
+        name: certification.issuer,
+      },
+      url: certification.link,
+      ...(certification.credentialId ? { identifier: certification.credentialId } : {}),
+    })),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "project inquiries",
@@ -216,22 +238,25 @@ export function buildServiceJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${siteUrl}/#flutter-development-service`,
-    name: "Senior Flutter app development",
-    serviceType: "Flutter app development",
+    "@id": `${siteUrl}/#app-development-service`,
+    name: "Senior mobile, web, and desktop app development",
+    serviceType: "Mobile, web, and desktop app development",
     provider: { "@id": `${siteUrl}/#person` },
     areaServed: "Worldwide",
     description:
-      "Production Flutter app development, rescue work, performance hardening, Flutter Web dashboards, native integrations, and store release support.",
+      "Production Flutter, React Native, native iOS and Android, web, and desktop development with app rescue, performance hardening, and store release support.",
     audience: {
       "@type": "Audience",
       audienceType: "founders, product teams, agencies, and engineering teams",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Flutter engineering services",
+      name: "App engineering services",
       itemListElement: [
         "Production Flutter app builds",
+        "React Native mobile app development",
+        "Native Android and iOS development",
+        "Web and desktop application development",
         "Flutter app rescue and debugging",
         "Fintech, telecom, POS, and marketplace workflows",
         "Flutter Web admin panels",
@@ -288,6 +313,14 @@ export function buildPackageListJsonLd() {
         programmingLanguage: "Dart",
         codeRepository: item.githubUrl,
         url: item.pubUrl || `${siteUrl}/packages`,
+        version: item.version,
+        publisher: item.publisher
+          ? {
+              "@type": "Organization",
+              name: item.publisher,
+              url: `https://pub.dev/publishers/${item.publisher}`,
+            }
+          : undefined,
         keywords: item.tags.join(", "),
       },
     })),
@@ -302,13 +335,15 @@ export function buildLlmsText() {
 
   return `# Syed Mubashir Ali
 
-> Senior Flutter Developer for production mobile, web, and desktop apps.
+> Senior mobile, web, and desktop app developer with deep Flutter expertise.
 
-Hire Syed for Flutter app development, app rescue, fintech workflows, telecom self-care, POS systems, Flutter Web dashboards, Firebase products, native integrations, and store release support.
+Hire Syed for Flutter and React Native apps, native iOS and Android development, web and desktop products, app rescue, fintech workflows, telecom self-care, POS systems, Firebase products, and store release support.
 
 ## Best-fit project work
 - Production Flutter mobile apps for Android and iOS
+- React Native and native Android or iOS development
 - Flutter Web admin panels and product dashboards
+- Responsive web and desktop applications
 - Fintech, wallet, telecom, POS, travel, healthcare, marketplace, and utility apps
 - App rescue, debugging, performance hardening, and release readiness
 - Native Android and iOS integrations through Flutter plugins
