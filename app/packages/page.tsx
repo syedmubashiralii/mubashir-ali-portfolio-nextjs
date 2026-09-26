@@ -27,9 +27,9 @@ export default function PackagesPage() {
             </p>
           </div>
           <div className="grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10">
-            <div className="bg-[#08141e] p-4"><strong className="block text-2xl">2</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-slate-500">Packages</span></div>
-            <div className="bg-[#08141e] p-4"><strong className="block text-2xl">100%</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-slate-500">Open source</span></div>
-            <div className="bg-[#08141e] p-4"><strong className="block text-2xl">Dart</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-slate-500">Ecosystem</span></div>
+            <div className="bg-[#08141e] p-4"><strong className="block text-2xl">2</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-slate-300">Packages</span></div>
+            <div className="bg-[#08141e] p-4"><strong className="block text-2xl">100%</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-slate-300">Open source</span></div>
+            <div className="bg-[#08141e] p-4"><strong className="block text-2xl">Dart</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-slate-300">Ecosystem</span></div>
           </div>
         </div>
       </section>

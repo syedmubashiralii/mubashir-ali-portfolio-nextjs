@@ -111,7 +111,7 @@ export default function AgenticAI() {
                 </li>
               ))}
             </ol>
-            <p className="mt-5 border-t border-white/10 pt-5 text-xs leading-6 text-slate-500">
+            <p className="mt-5 border-t border-white/10 pt-5 text-xs leading-6 text-slate-300">
               The goal is not more generated code. It is a shorter path to reliable product outcomes.
             </p>
           </motion.aside>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* This portfolio has one intentional editorial theme. Keep Tailwind's dark
+   variant class-driven so OS dark mode cannot recolor only part of a section. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Font CSS variables */
 :root {
   --font-sans: var(--font-geist-sans);
@@ -12,6 +16,7 @@
 body {
   background: var(--paper);
   color: var(--ink);
+  color-scheme: light;
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 

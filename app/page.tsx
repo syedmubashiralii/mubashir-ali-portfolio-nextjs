@@ -127,15 +127,15 @@ export default function HomePage() {
               <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-[#08141e]">
                 <div className="p-4 text-center">
                   <strong className="block text-xl text-white">5+</strong>
-                  <span className="mt-1 block text-[11px] uppercase tracking-wide text-slate-500">Years</span>
+                  <span className="mt-1 block text-[11px] uppercase tracking-wide text-slate-300">Years</span>
                 </div>
                 <div className="p-4 text-center">
                   <strong className="block text-xl text-white">20+</strong>
-                  <span className="mt-1 block text-[11px] uppercase tracking-wide text-slate-500">Apps</span>
+                  <span className="mt-1 block text-[11px] uppercase tracking-wide text-slate-300">Apps</span>
                 </div>
                 <div className="p-4 text-center">
                   <strong className="block text-xl text-white">4</strong>
-                  <span className="mt-1 block text-[11px] uppercase tracking-wide text-slate-500">Platforms</span>
+                  <span className="mt-1 block text-[11px] uppercase tracking-wide text-slate-300">Platforms</span>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function HomePage() {
                     <span className="grid h-11 w-11 place-items-center rounded-md bg-slate-950 text-cyan-300">
                       <Icon size={20} />
                     </span>
-                    <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
                       {capability.eyebrow}
                     </span>
                   </div>

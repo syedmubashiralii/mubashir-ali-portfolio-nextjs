@@ -111,7 +111,7 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
+                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
                 required
               />
             </label>
@@ -123,7 +123,7 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
+                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
                 required
               />
             </label>
@@ -136,7 +136,7 @@ export default function ContactSection() {
               value={formData.subject}
               onChange={handleChange}
               placeholder="App, Agentic AI, MCP, role, consultation..."
-              className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
+              className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
               required
             />
           </label>
@@ -148,7 +148,7 @@ export default function ContactSection() {
               onChange={handleChange}
               placeholder="Share the app, timeline, stack, or problem you want to solve."
               rows={6}
-              className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
+              className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
               required
             />
           </label>

@@ -13,17 +13,20 @@ export default function SiteHeader() {
           </span>
           <span>
             <strong className="block text-sm leading-none">Syed Mubashir Ali</strong>
-            <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.15em] text-slate-500">
+            <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.15em] text-slate-300">
               Senior app engineer
             </span>
           </span>
         </Link>
-        <nav aria-label="Main navigation" className="order-3 flex w-full flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-3 md:order-none md:w-auto md:border-0 md:pt-0">
+        <nav
+          aria-label="Main navigation"
+          className="order-3 grid w-full grid-cols-4 gap-1 border-t border-white/10 pt-3 md:order-none md:flex md:w-auto md:gap-x-5 md:border-0 md:pt-0"
+        >
           {siteNavigation.slice(1).map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-400 transition hover:text-cyan-300"
+              className="text-center text-[10px] font-semibold uppercase tracking-[0.06em] text-slate-300 transition hover:text-cyan-300 sm:text-xs sm:tracking-[0.1em]"
             >
               {item.label}
             </Link>

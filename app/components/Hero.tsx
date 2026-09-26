@@ -27,7 +27,7 @@ export default function Hero() {
             <BadgeCheck size={14} /> Available for selected product work
           </div>
 
-          <p className="mt-8 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+          <p className="mt-8 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-slate-300">
             <span className="h-px w-8 bg-cyan-300" /> Portfolio · 2026
           </p>
           <h1 className="mt-5 max-w-3xl text-balance text-5xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl">
@@ -97,7 +97,7 @@ export default function Hero() {
               {stats.map((stat) => (
                 <div key={stat.label} className="bg-[#08141e] p-4">
                   <p className="text-2xl font-bold text-white">{stat.value}</p>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">{stat.label}</p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-300">{stat.label}</p>
                 </div>
               ))}
             </div>
