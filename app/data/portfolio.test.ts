@@ -17,11 +17,14 @@ describe("portfolio data", () => {
 
   it("positions the profile for mobile, web, desktop, and native delivery", () => {
     const coreTechnologies = skillCategories.find((category) => category.title === "Core Technologies");
+    const aiEngineering = skillCategories.find((category) => category.title === "AI-Assisted Engineering");
 
     expect(contact.role).toBe("Senior Mobile, Web & Desktop App Developer");
+    expect(contact.email).toBe("sydmubashirali@gmail.com");
     expect(coreTechnologies?.skills).toEqual(
       expect.arrayContaining(["Flutter", "React Native", "Native Android", "Native iOS"]),
     );
+    expect(aiEngineering?.skills).toEqual(expect.arrayContaining(["Agentic AI", "Model Context Protocol"]));
   });
 
   it("lists the Claude Code professional credential", () => {

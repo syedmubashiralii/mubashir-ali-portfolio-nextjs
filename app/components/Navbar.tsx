@@ -10,6 +10,7 @@ import { cn } from "../utils/utils";
 const navLinks = [
   { name: "Overview", href: "/portfolio#home" },
   { name: "About", href: "/portfolio#about" },
+  { name: "AI & MCP", href: "/portfolio#ai" },
   { name: "Experience", href: "/portfolio#experience" },
   { name: "Skills", href: "/portfolio#skills" },
   { name: "Projects", href: "/portfolio#projects" },
@@ -55,19 +56,19 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-4 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
+              className="text-xs font-semibold text-slate-600 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
             >
               {link.name}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={contact.resumeUrl}
             download="Syed_Mubashir_Ali_Resume.pdf"
@@ -78,7 +79,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-blue-700 md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-cyan-300 hover:text-cyan-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-cyan-700 lg:hidden"
           onClick={() => setMenuOpen((value) => !value)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -116,7 +117,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-4 right-4 top-full mt-2 rounded-lg border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-950 md:hidden"
+            className="absolute left-4 right-4 top-full mt-2 rounded-lg border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-950 lg:hidden"
           >
             <nav className="grid gap-1">
               <Link

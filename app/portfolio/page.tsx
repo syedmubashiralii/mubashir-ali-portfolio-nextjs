@@ -3,6 +3,7 @@
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import About from "@/app/components/About";
+import AgenticAI from "@/app/components/AgenticAI";
 import ContactSection from "@/app/components/ContactSection";
 import Hero from "@/app/components/Hero";
 import Journey from "@/app/components/Journey";
@@ -44,6 +45,7 @@ export default function PortfolioPage() {
     <div className="min-h-screen bg-slate-50 text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-50">
       <Hero />
       <About />
+      <AgenticAI />
       <Journey />
       <Skills />
       <Projects />

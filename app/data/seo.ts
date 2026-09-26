@@ -6,6 +6,7 @@ export const siteUrl = "https://syedmubashirali.com";
 
 const profileImage = "/profile-image.png";
 const profileImageUrl = `${siteUrl}${profileImage}`;
+const socialImage = "/og.png";
 const siteName = "Syed Mubashir Ali";
 
 export const seoKeywords = [
@@ -26,10 +27,15 @@ export const seoKeywords = [
   "Dart developer",
   "mobile app developer Pakistan",
   "cross-platform app developer",
+  "Agentic AI developer",
+  "AI-assisted software engineer",
+  "Model Context Protocol developer",
+  "MCP integrations",
+  "AI coding agents",
 ];
 
 const leadDescription =
-  "Hire a senior mobile, web, and desktop app developer for Flutter, React Native, native iOS and Android, Next.js, production delivery, and app rescue work.";
+  "Hire a senior app engineer for Flutter, native mobile, Next.js, Agentic AI and MCP workflows, production delivery, and complex app rescue work.";
 
 function routeUrl(path: string) {
   return `${siteUrl}${path === "/" ? "" : path}`;
@@ -60,10 +66,10 @@ function createPageMetadata({
       locale: "en_US",
       images: [
         {
-          url: profileImage,
-          width: 1024,
-          height: 1024,
-          alt: `${contact.name}, ${contact.role}`,
+          url: socialImage,
+          width: 1734,
+          height: 907,
+          alt: `${contact.name} — Senior App Engineer, Agentic AI and MCPs`,
         },
       ],
     },
@@ -71,7 +77,7 @@ function createPageMetadata({
       card: "summary_large_image",
       title: `${title} | ${siteName}`,
       description,
-      images: [profileImage],
+      images: [socialImage],
     },
   };
 }
@@ -80,7 +86,7 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Hire Senior App Developer | Syed Mubashir Ali",
+    default: "Senior App & Agentic AI Engineer | Syed Mubashir Ali",
     template: `%s | ${siteName}`,
   },
   description: leadDescription,
@@ -89,6 +95,13 @@ export const siteMetadata: Metadata = {
   creator: contact.name,
   publisher: contact.name,
   category: "Technology",
+  classification: "Software engineering portfolio",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
@@ -101,7 +114,7 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Hire Senior App Developer | Syed Mubashir Ali",
+    title: "Senior App & Agentic AI Engineer | Syed Mubashir Ali",
     description: leadDescription,
     url: siteUrl,
     siteName,
@@ -109,31 +122,31 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: profileImage,
-        width: 1024,
-        height: 1024,
-        alt: `${contact.name}, ${contact.role}`,
+        url: socialImage,
+        width: 1734,
+        height: 907,
+        alt: `${contact.name} — Senior App Engineer, Agentic AI and MCPs`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hire Senior App Developer | Syed Mubashir Ali",
+    title: "Senior App & Agentic AI Engineer | Syed Mubashir Ali",
     description: leadDescription,
-    images: [profileImage],
+    images: [socialImage],
   },
 };
 
 export const homeMetadata = createPageMetadata({
-  title: "Hire Senior Mobile, Web & Desktop App Developer",
+  title: "Senior App Engineer for Flutter, Agentic AI & MCPs",
   description: leadDescription,
   path: "/",
 });
 
 export const portfolioMetadata = createPageMetadata({
-  title: "Mobile, Web & Desktop App Developer Portfolio",
+  title: "App Engineering, Agentic AI & MCP Portfolio",
   description:
-    "Review Syed Mubashir Ali's mobile, web, and desktop development experience, production projects, certifications, skills, resume, and delivery proof.",
+    "Explore Syed Mubashir Ali's app engineering experience, Agentic AI and MCP workflow, production projects, certifications, skills, and delivery proof.",
   path: "/portfolio",
 });
 
@@ -152,9 +165,9 @@ export const projectsMetadata = createPageMetadata({
 });
 
 export const contactMetadata = createPageMetadata({
-  title: "Start a Mobile, Web or Desktop App Project",
+  title: "Start an App, Agentic AI or MCP Project",
   description:
-    "Start a mobile, web, or desktop app project with Syed Mubashir Ali for Flutter, React Native, native development, app rescue, or senior engineering support.",
+    "Start a mobile, web, desktop, Agentic AI, or MCP-enabled project with Syed Mubashir Ali for new product delivery, app rescue, or senior engineering support.",
   path: "/contact",
 });
 
@@ -174,6 +187,10 @@ const knowsAbout = [
   "Mobile app architecture",
   "App Store deployment",
   "Google Play deployment",
+  "Agentic AI",
+  "Model Context Protocol",
+  "AI coding agents",
+  "AI-assisted software development",
 ];
 
 export function buildPersonJsonLd() {
@@ -239,12 +256,12 @@ export function buildServiceJsonLd() {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${siteUrl}/#app-development-service`,
-    name: "Senior mobile, web, and desktop app development",
-    serviceType: "Mobile, web, and desktop app development",
+    name: "Senior app engineering and AI-assisted product delivery",
+    serviceType: "Mobile, web, desktop, Agentic AI, and MCP-enabled software development",
     provider: { "@id": `${siteUrl}/#person` },
     areaServed: "Worldwide",
     description:
-      "Production Flutter, React Native, native iOS and Android, web, and desktop development with app rescue, performance hardening, and store release support.",
+      "Production Flutter, native mobile, web, and desktop engineering with Agentic AI and MCP workflows, app rescue, performance hardening, and release support.",
     audience: {
       "@type": "Audience",
       audienceType: "founders, product teams, agencies, and engineering teams",
@@ -260,6 +277,8 @@ export function buildServiceJsonLd() {
         "Flutter app rescue and debugging",
         "Fintech, telecom, POS, and marketplace workflows",
         "Flutter Web admin panels",
+        "Agentic AI engineering workflows",
+        "Model Context Protocol integrations",
         "App Store and Google Play release support",
       ].map((name) => ({
         "@type": "Offer",
@@ -335,9 +354,9 @@ export function buildLlmsText() {
 
   return `# Syed Mubashir Ali
 
-> Senior mobile, web, and desktop app developer with deep Flutter expertise.
+> Senior app engineer with deep Flutter expertise and a confident Agentic AI and MCP-enabled workflow.
 
-Hire Syed for Flutter and React Native apps, native iOS and Android development, web and desktop products, app rescue, fintech workflows, telecom self-care, POS systems, Firebase products, and store release support.
+Hire Syed for Flutter and React Native apps, native iOS and Android development, web and desktop products, Agentic AI and MCP workflows, app rescue, fintech systems, telecom self-care, POS platforms, and store release support.
 
 ## Best-fit project work
 - Production Flutter mobile apps for Android and iOS
@@ -347,6 +366,8 @@ Hire Syed for Flutter and React Native apps, native iOS and Android development,
 - Fintech, wallet, telecom, POS, travel, healthcare, marketplace, and utility apps
 - App rescue, debugging, performance hardening, and release readiness
 - Native Android and iOS integrations through Flutter plugins
+- Agentic AI workflows with senior human review and production accountability
+- MCP integrations that connect AI agents with repositories, tools, documentation, and services
 
 ## Priority pages
 - [Start a Flutter project](${siteUrl}/contact): Fast WhatsApp, email, phone, and social contact paths.

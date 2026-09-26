@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-gray-100`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#eef2f3] text-slate-950 antialiased transition-colors duration-300 ease-in-out dark:bg-slate-950 dark:text-slate-100`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <JsonLd id="person-jsonld" data={buildPersonJsonLd()} />

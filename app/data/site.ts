@@ -10,7 +10,7 @@ export type DirectoryLink = {
 export const directoryLinks: DirectoryLink[] = [
   {
     title: "Portfolio",
-    description: "Mobile, web, and desktop app experience, skills, certifications, and resume.",
+    description: "Experience, production engineering, AI-native workflow, certifications, and resume.",
     href: "/portfolio",
     icon: "briefcase",
   },
@@ -28,7 +28,7 @@ export const directoryLinks: DirectoryLink[] = [
   },
   {
     title: "Contact",
-    description: "Start a mobile, web, or desktop app project through WhatsApp, email, or LinkedIn.",
+    description: "Start an app, Agentic AI, automation, or product engineering conversation.",
     href: "/contact",
     icon: "mail",
   },
@@ -36,16 +36,16 @@ export const directoryLinks: DirectoryLink[] = [
 
 export const leadServices = [
   {
-    title: "Mobile apps",
-    description: "Flutter, React Native, native Android, and native iOS products from MVP to store release.",
+    title: "Product engineering",
+    description: "Flutter, native mobile, React, Next.js, and desktop products from architecture to production.",
   },
   {
-    title: "Web & desktop",
-    description: "Responsive web apps, admin dashboards, and desktop products with production-ready architecture.",
+    title: "Agentic AI & MCPs",
+    description: "AI-assisted development and Model Context Protocol workflows that connect tools, context, and action.",
   },
   {
     title: "Build, rescue & scale",
-    description: "Senior engineering support for new builds, difficult bugs, performance, and blocked releases.",
+    description: "Senior ownership for new builds, complex codebases, difficult bugs, performance, and blocked releases.",
   },
 ] as const;
 

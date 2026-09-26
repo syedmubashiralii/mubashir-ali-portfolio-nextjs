@@ -16,6 +16,6 @@ describe("top-level content routes", () => {
   it("renders the existing contact experience", () => {
     render(<ContactPage />);
 
-    expect(screen.getByText("smubashirali620@gmail.com")).toBeInTheDocument();
+    expect(screen.getAllByText("sydmubashirali@gmail.com").length).toBeGreaterThan(0);
   });
 });

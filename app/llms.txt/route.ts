@@ -1,5 +1,7 @@
 import { buildLlmsText } from "@/app/data/seo";
 
+export const dynamic = "force-static";
+
 export function GET() {
   return new Response(buildLlmsText(), {
     headers: {

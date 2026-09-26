@@ -15,7 +15,14 @@ describe("AI-ready SEO data", () => {
         "@id": `${siteUrl}/#person`,
         name: "Syed Mubashir Ali",
         jobTitle: "Senior Mobile, Web & Desktop App Developer",
-        knowsAbout: expect.arrayContaining(["Flutter", "React Native", "Native Android development", "Native iOS development"]),
+        knowsAbout: expect.arrayContaining([
+          "Flutter",
+          "React Native",
+          "Native Android development",
+          "Native iOS development",
+          "Agentic AI",
+          "Model Context Protocol",
+        ]),
         sameAs: expect.arrayContaining([
           "https://github.com/syedmubashiralii",
           "https://www.linkedin.com/in/syed-mubashir-ali-796122177",
@@ -62,7 +69,8 @@ describe("AI-ready SEO data", () => {
     const text = buildLlmsText();
 
     expect(text).toContain("# Syed Mubashir Ali");
-    expect(text).toContain("Senior mobile, web, and desktop app developer");
+    expect(text).toContain("Senior app engineer");
+    expect(text).toContain("Agentic AI and MCP-enabled workflow");
     expect(text).toContain("- [Start a Flutter project](https://syedmubashirali.com/contact)");
     expect(text).toContain("- [Flutter packages](https://syedmubashirali.com/packages)");
   });

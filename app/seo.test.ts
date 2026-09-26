@@ -36,10 +36,10 @@ describe("SEO configuration", () => {
   });
 
   it("targets qualified app development leads in route metadata", () => {
-    expect(homeMetadata.title).toBe("Hire Senior Mobile, Web & Desktop App Developer");
-    expect(String(homeMetadata.description).toLowerCase()).toContain("senior mobile, web, and desktop app developer");
+    expect(homeMetadata.title).toBe("Senior App Engineer for Flutter, Agentic AI & MCPs");
+    expect(String(homeMetadata.description)).toContain("Agentic AI and MCP workflows");
     expect(projectsMetadata.description).toContain("fintech, telecom, POS");
     expect(packagesMetadata.description).toContain("Nexio networking runtime");
-    expect(contactMetadata.description).toContain("Start a mobile, web, or desktop app project");
+    expect(contactMetadata.description).toContain("Agentic AI");
   });
 });

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Mail, MapPin, Phone, Rocket, ShieldCheck, Smartphone } from "lucide-react";
+import { Bot, CheckCircle2, Mail, MapPin, Phone, Rocket, ShieldCheck, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { contact, focusAreas, stats } from "../data/portfolio";
 
@@ -20,6 +20,11 @@ const strengths = [
     icon: <Smartphone size={18} />,
     title: "Cross-platform craft",
     text: "Flutter, React Native, native iOS and Android, responsive web, desktop, payments, maps, and media tools.",
+  },
+  {
+    icon: <Bot size={18} />,
+    title: "AI-native workflow",
+    text: "Agentic AI, coding agents, and MCP tools used with deliberate review, verification, and production accountability.",
   },
 ];
 
@@ -55,7 +60,7 @@ export default function About() {
             transition={{ duration: 0.55 }}
             className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
           >
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               {strengths.map((item) => (
                 <div key={item.title} className="rounded-lg bg-slate-50 p-4 dark:bg-slate-950">
                   <div className="mb-3 grid h-9 w-9 place-items-center rounded-lg bg-blue-600 text-white">{item.icon}</div>

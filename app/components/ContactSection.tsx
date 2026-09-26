@@ -49,14 +49,14 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="text-sm font-semibold uppercase text-blue-300">Start an app project</p>
+          <p className="text-sm font-semibold uppercase text-cyan-300">Start a product conversation</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
-            Need a mobile, web, or desktop product built, rescued, or shipped?
+            Need a product built, rescued, or accelerated with AI?
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-300">
             Share the idea, platform, broken flow, deadline, or release blocker. I can support Flutter, React Native,
-            native iOS or Android, modern web apps, and desktop delivery. The form opens WhatsApp with your message
-            pre-filled for a fast project conversation.
+            native iOS or Android, modern web apps, desktop delivery, Agentic AI workflows, and MCP integrations. The
+            form opens WhatsApp with your message pre-filled for a fast project conversation.
           </p>
 
           <div className="mt-8 space-y-3">
@@ -134,7 +134,7 @@ export default function ContactSection() {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              placeholder="Project, role, consultation..."
+              placeholder="App, Agentic AI, MCP, role, consultation..."
               className="mt-2 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-slate-950"
               required
             />

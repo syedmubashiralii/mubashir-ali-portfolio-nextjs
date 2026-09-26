@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, Map, Megaphone, Server, Shield, Smartphone, Store, Wallet, Zap } from "lucide-react";
+import { Bot, Code2, Database, Map, Megaphone, Server, Shield, Smartphone, Store, Wallet, Zap } from "lucide-react";
 import { skillCategories } from "../data/portfolio";
 
-const iconMap = [Smartphone, Zap, Server, Database, Wallet, Megaphone, Map, Code2, Server, Store, Shield, Store];
+const iconMap = [Smartphone, Zap, Server, Database, Wallet, Megaphone, Map, Code2, Server, Store, Shield, Bot, Store];
 
 const accents = [
   "border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300",
@@ -19,6 +19,7 @@ const accents = [
   "border-yellow-200 bg-yellow-50 text-yellow-700 dark:border-yellow-900 dark:bg-yellow-950/40 dark:text-yellow-300",
   "border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300",
   "border-teal-200 bg-teal-50 text-teal-700 dark:border-teal-900 dark:bg-teal-950/40 dark:text-teal-300",
+  "border-cyan-200 bg-cyan-50 text-cyan-700 dark:border-cyan-900 dark:bg-cyan-950/40 dark:text-cyan-300",
 ];
 
 export default function Skills() {

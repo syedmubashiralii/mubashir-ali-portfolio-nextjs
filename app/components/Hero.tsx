@@ -26,7 +26,7 @@ const socialLinks = [
 const proofPoints = [
   "Flutter & React Native",
   "Native iOS & Android",
-  "Web & desktop delivery",
+  "Agentic AI & MCP workflows",
 ];
 
 export default function Hero() {
@@ -64,12 +64,13 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-6 max-w-4xl text-balance text-3xl font-bold leading-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
-            I build polished mobile, web, and desktop apps that survive real users and production scale.
+            I build polished apps with senior engineering judgment and modern AI leverage.
           </h1>
 
           <p className="mt-5 max-w-2xl text-pretty text-base leading-8 text-slate-700 sm:text-lg dark:text-slate-300">
             {contact.name} is a senior app developer with 5+ years of experience shipping Flutter, React Native,
-            native iOS and Android, web, and desktop products across fintech, telecom, POS, travel, and healthcare.
+            native iOS and Android, web, and desktop products across fintech, telecom, POS, travel, and healthcare. I
+            work comfortably with Agentic AI, AI coding agents, and MCP-powered workflows.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-2">

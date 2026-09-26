@@ -968,7 +968,7 @@ describe("top-level content routes", () => {
 
   it("renders the existing contact experience", () => {
     render(<ContactPage />);
-    expect(screen.getByText("smubashirali620@gmail.com")).toBeVisible();
+    expect(screen.getByText("sydmubashirali@gmail.com")).toBeVisible();
   });
 });
 ```

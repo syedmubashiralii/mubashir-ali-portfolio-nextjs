@@ -2,7 +2,7 @@ export const contact = {
   name: "Syed Mubashir Ali",
   role: "Senior Mobile, Web & Desktop App Developer",
   tagline: "Flutter · React Native · Native iOS & Android",
-  email: "smubashirali620@gmail.com",
+  email: "sydmubashirali@gmail.com",
   phone: "+92 310 5205275",
   whatsapp: "923105205275",
   location: "Islamabad, Pakistan",
@@ -29,6 +29,7 @@ export const focusAreas = [
   "Web & desktop products",
   "ML/media apps",
   "Store deployment",
+  "Agentic AI and MCP workflows",
 ];
 
 export const skillCategories = [
@@ -84,6 +85,10 @@ export const skillCategories = [
   {
     title: "Tools & Practices",
     skills: ["Git", "Clean Architecture", "MVVM", "REST API Design", "Agile / Scrum"],
+  },
+  {
+    title: "AI-Assisted Engineering",
+    skills: ["Agentic AI", "Model Context Protocol", "AI Coding Agents", "Claude Code", "Human-in-the-Loop Review"],
   },
   {
     title: "Deployment",

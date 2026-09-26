@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/app/data/seo";
 
+export const dynamic = "force-static";
+
 const routes = ["", "/portfolio", "/packages", "/projects", "/contact"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
