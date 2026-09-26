@@ -41,16 +41,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-slate-950 px-4 py-20 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <section id="contact" className="relative overflow-hidden bg-[#061019] px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28">
+      <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(103,232,249,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(103,232,249,0.08)_1px,transparent_1px)] [background-size:52px_52px] [mask-image:linear-gradient(to_right,black,transparent)]" />
+      <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="text-sm font-semibold uppercase text-cyan-300">Start a product conversation</p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">Start a product conversation</p>
+          <h2 className="mt-4 text-balance text-4xl font-bold leading-tight tracking-[-0.035em] sm:text-5xl">
             Need a product built, rescued, or accelerated with AI?
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-300">
@@ -62,17 +63,17 @@ export default function ContactSection() {
           <div className="mt-8 space-y-3">
             <Link
               href={`mailto:${contact.email}?subject=Portfolio%20Inquiry`}
-              className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-slate-200 transition hover:border-blue-300 hover:bg-white/10"
+              className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200 transition hover:border-cyan-300/60 hover:bg-white/[0.08]"
             >
               <Mail size={18} /> {contact.email}
             </Link>
             <Link
               href={`tel:${contact.phone.replace(/\s/g, "")}`}
-              className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-slate-200 transition hover:border-blue-300 hover:bg-white/10"
+              className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200 transition hover:border-cyan-300/60 hover:bg-white/[0.08]"
             >
               <Phone size={18} /> {contact.phone}
             </Link>
-            <div className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-slate-200">
+            <div className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200">
               <MapPin size={18} /> {contact.location}
             </div>
           </div>
@@ -85,7 +86,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-blue-300 hover:text-white"
+                className="grid h-11 w-11 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300/60 hover:text-cyan-300"
               >
                 {social.icon}
               </Link>
@@ -99,10 +100,10 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="rounded-lg border border-white/10 bg-white p-5 text-slate-950 shadow-2xl shadow-black/20 dark:bg-slate-900 dark:text-white"
+          className="rounded-xl border border-cyan-300/20 bg-[#0a1721] p-6 text-white shadow-2xl shadow-black/30"
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm font-medium">
+            <label className="text-sm font-medium text-slate-200">
               Name
               <input
                 type="text"
@@ -110,11 +111,11 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-slate-950"
+                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
                 required
               />
             </label>
-            <label className="text-sm font-medium">
+            <label className="text-sm font-medium text-slate-200">
               Email
               <input
                 type="email"
@@ -122,12 +123,12 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-slate-950"
+                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
                 required
               />
             </label>
           </div>
-          <label className="mt-4 block text-sm font-medium">
+          <label className="mt-4 block text-sm font-medium text-slate-200">
             Subject
             <input
               type="text"
@@ -135,11 +136,11 @@ export default function ContactSection() {
               value={formData.subject}
               onChange={handleChange}
               placeholder="App, Agentic AI, MCP, role, consultation..."
-              className="mt-2 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-slate-950"
+              className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
               required
             />
           </label>
-          <label className="mt-4 block text-sm font-medium">
+          <label className="mt-4 block text-sm font-medium text-slate-200">
             Message
             <textarea
               name="message"
@@ -147,11 +148,11 @@ export default function ContactSection() {
               onChange={handleChange}
               placeholder="Share the app, timeline, stack, or problem you want to solve."
               rows={6}
-              className="mt-2 w-full resize-none rounded-lg border border-slate-300 bg-white p-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-slate-950"
+              className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
               required
             />
           </label>
-          <Button type="submit" className="mt-5 w-full rounded-full bg-emerald-600 text-white hover:bg-emerald-700">
+          <Button type="submit" className="mt-5 h-12 w-full rounded-md bg-cyan-300 font-bold text-slate-950 hover:bg-cyan-200">
             <Send className="h-4 w-4" /> Send via WhatsApp
           </Button>
         </motion.form>

@@ -19,7 +19,7 @@ export default function ResumeViewer() {
   };
 
   return (
-    <section id="resume" className="px-4 py-20 sm:px-6 lg:px-8">
+    <section id="resume" className="bg-[#eef2f3] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,8 +28,8 @@ export default function ResumeViewer() {
           transition={{ duration: 0.55 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-300">Resume</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl dark:text-white">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">Resume</p>
+          <h2 className="mt-4 text-4xl font-bold tracking-[-0.035em] text-slate-950 sm:text-5xl dark:text-white">
             Full resume, available locally on the site.
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -42,11 +42,11 @@ export default function ResumeViewer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="mt-10 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-900"
+          className="mt-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-900"
         >
-          <div className="flex flex-col gap-3 border-b border-slate-200 bg-slate-950 p-4 text-white dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 border-b border-white/10 bg-[#061019] p-4 text-white sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/10">
+              <div className="grid h-10 w-10 place-items-center rounded-md bg-cyan-300 text-slate-950">
                 <FileText size={19} />
               </div>
               <div>
@@ -59,7 +59,7 @@ export default function ResumeViewer() {
                 onClick={() => setIsFullScreen(true)}
                 variant="ghost"
                 size="sm"
-                className="rounded-full text-white hover:bg-white/10 hover:text-white"
+                className="rounded-md text-white hover:bg-white/10 hover:text-cyan-200"
               >
                 <Maximize2 className="h-4 w-4" /> Full Screen
               </Button>
@@ -67,7 +67,7 @@ export default function ResumeViewer() {
                 asChild
                 variant="ghost"
                 size="sm"
-                className="rounded-full text-white hover:bg-white/10 hover:text-white"
+                className="rounded-md text-white hover:bg-white/10 hover:text-cyan-200"
               >
                 <a href={contact.resumeUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" /> Open
@@ -77,7 +77,7 @@ export default function ResumeViewer() {
                 onClick={handleDownload}
                 variant="ghost"
                 size="sm"
-                className="rounded-full text-white hover:bg-white/10 hover:text-white"
+                className="rounded-md bg-cyan-300 text-slate-950 hover:bg-cyan-200 hover:text-slate-950"
               >
                 <Download className="h-4 w-4" /> Download
               </Button>
@@ -98,7 +98,7 @@ export default function ResumeViewer() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[70] bg-slate-950/95 p-3 backdrop-blur"
           >
-            <div className="flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-white dark:bg-slate-950">
+            <div className="flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white dark:bg-slate-950">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-950 p-3 text-white dark:border-slate-800">
                 <div className="flex items-center gap-2 text-sm font-semibold">
                   <FileText size={17} /> Resume Preview

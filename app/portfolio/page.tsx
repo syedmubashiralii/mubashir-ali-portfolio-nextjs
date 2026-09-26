@@ -42,7 +42,7 @@ export default function PortfolioPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-50">
+    <div className="min-h-screen bg-[#eef2f3] text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-50">
       <Hero />
       <About />
       <AgenticAI />
@@ -55,7 +55,7 @@ export default function PortfolioPage() {
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-slate-950 text-white shadow-lg shadow-slate-950/20 transition hover:-translate-y-0.5 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-200"
+          className="fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-md border border-white/20 bg-slate-950 text-cyan-300 shadow-lg shadow-slate-950/20 transition hover:-translate-y-0.5 hover:bg-cyan-300 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           aria-label="Scroll to top"
         >
           <ArrowUp size={18} />

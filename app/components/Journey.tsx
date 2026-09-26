@@ -7,7 +7,7 @@ import { certifications, education, experiences } from "../data/portfolio";
 
 export default function Journey() {
   return (
-    <section id="experience" className="bg-white px-4 py-20 dark:bg-slate-900/60 sm:px-6 lg:px-8">
+    <section id="experience" className="bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,8 +16,8 @@ export default function Journey() {
           transition={{ duration: 0.55 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-300">Experience</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl dark:text-white">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">Experience</p>
+          <h2 className="mt-4 text-4xl font-bold tracking-[-0.035em] text-slate-950 sm:text-5xl dark:text-white">
             Work history built around shipped products.
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -33,11 +33,11 @@ export default function Journey() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="grid gap-5 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:border-blue-300 hover:bg-white dark:border-slate-800 dark:bg-slate-950 dark:hover:border-blue-800 dark:hover:bg-slate-900 md:grid-cols-[0.36fr_0.64fr]"
+              className="group grid gap-6 rounded-xl border border-slate-200 bg-[#f7f9f9] p-6 transition hover:-translate-y-0.5 hover:border-cyan-400 hover:bg-white hover:shadow-xl hover:shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-950 md:grid-cols-[0.36fr_0.64fr]"
             >
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="grid h-10 w-10 place-items-center rounded-lg bg-blue-600 text-white">
+                  <div className="grid h-10 w-10 place-items-center rounded-md bg-slate-950 text-cyan-300 dark:bg-cyan-300 dark:text-slate-950">
                     <BriefcaseBusiness size={18} />
                   </div>
                   {experience.badge && (
@@ -47,7 +47,7 @@ export default function Journey() {
                   )}
                 </div>
                 <h3 className="mt-4 text-lg font-bold text-slate-950 dark:text-white">{experience.title}</h3>
-                <p className="mt-1 text-sm font-semibold text-blue-700 dark:text-blue-300">{experience.company}</p>
+                <p className="mt-1 text-sm font-semibold text-cyan-700 dark:text-cyan-300">{experience.company}</p>
                 <div className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
                   <p className="flex items-center gap-2">
                     <Calendar size={15} /> {experience.period}
@@ -60,7 +60,7 @@ export default function Journey() {
                   <Link
                     href={experience.documentLink}
                     target="_blank"
-                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500 dark:hover:text-blue-300"
+                    className="mt-4 inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-700 dark:border-slate-700 dark:text-slate-300"
                   >
                     View Letter <ExternalLink size={13} />
                   </Link>
@@ -71,7 +71,7 @@ export default function Journey() {
                 <ul className="space-y-3">
                   {experience.highlights.map((item) => (
                     <li key={item} className="flex gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -80,7 +80,7 @@ export default function Journey() {
                   {experience.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-medium text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+                      className="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-xs font-medium text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
                     >
                       {item}
                     </span>
@@ -97,14 +97,14 @@ export default function Journey() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-lg border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900/60 dark:bg-emerald-950/30"
+            className="rounded-xl border border-slate-800 bg-[#061019] p-6 text-white"
           >
-            <div className="grid h-10 w-10 place-items-center rounded-lg bg-emerald-600 text-white">
+            <div className="grid h-10 w-10 place-items-center rounded-md bg-cyan-300 text-slate-950">
               <GraduationCap size={18} />
             </div>
-            <h3 className="mt-4 text-lg font-bold text-slate-950 dark:text-white">{education.degree}</h3>
-            <p className="mt-1 text-sm font-semibold text-emerald-700 dark:text-emerald-300">{education.institution}</p>
-            <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-300">
+            <h3 className="mt-4 text-lg font-bold text-white">{education.degree}</h3>
+            <p className="mt-1 text-sm font-semibold text-cyan-300">{education.institution}</p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-400">
               <span className="inline-flex items-center gap-2">
                 <Calendar size={15} /> {education.period}
               </span>
@@ -119,10 +119,10 @@ export default function Journey() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="rounded-lg border border-amber-200 bg-amber-50 p-5 dark:border-amber-900/60 dark:bg-amber-950/30"
+            className="rounded-xl border border-slate-200 bg-[#f7f9f9] p-6 dark:border-slate-800 dark:bg-slate-900"
           >
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-amber-500 text-white">
+              <div className="grid h-10 w-10 place-items-center rounded-md bg-slate-950 text-cyan-300 dark:bg-cyan-300 dark:text-slate-950">
                 <Award size={18} />
               </div>
               <h3 className="text-lg font-bold text-slate-950 dark:text-white">Certifications</h3>
@@ -136,29 +136,29 @@ export default function Journey() {
                   rel="noopener noreferrer"
                   className={`group relative overflow-hidden rounded-xl border p-4 transition hover:-translate-y-1 hover:shadow-lg ${
                     certification.featured
-                      ? "sm:col-span-2 border-violet-300 bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-700 text-white shadow-lg shadow-violet-900/20 hover:border-violet-200"
-                      : "border-amber-200 bg-white hover:border-amber-400 dark:border-amber-900/60 dark:bg-slate-950 dark:hover:border-amber-600"
+                      ? "sm:col-span-2 border-cyan-300/30 bg-[#061019] text-white shadow-lg shadow-slate-900/20 hover:border-cyan-300"
+                      : "border-slate-200 bg-white hover:border-cyan-400 dark:border-slate-800 dark:bg-slate-950"
                   }`}
                 >
                   {certification.featured ? (
                     <div className="relative grid gap-4 sm:grid-cols-[auto_1fr_auto] sm:items-center">
                       <div className="relative grid h-14 w-14 place-items-center rounded-2xl bg-white/15 ring-1 ring-white/25 backdrop-blur">
                         <span className="text-xl font-black">M</span>
-                        <Sparkles className="absolute -right-1 -top-1 text-pink-200" size={16} />
+                        <Sparkles className="absolute -right-1 -top-1 text-cyan-200" size={16} />
                       </div>
                       <div>
-                        <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-blue-100">
+                        <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-cyan-100">
                           <span>Code With Mosh</span>
                           <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2 py-1 text-white ring-1 ring-white/20">
                             <BadgeCheck size={12} /> New certification
                           </span>
                         </div>
                         <p className="mt-2 text-lg font-bold leading-6">{certification.title}</p>
-                        <p className="mt-2 text-xs text-blue-100">
+                        <p className="mt-2 text-xs text-slate-400">
                           Issued {certification.period} · Credential ID {certification.credentialId}
                         </p>
                       </div>
-                      <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-3 py-2 text-xs font-bold text-indigo-700 transition group-hover:bg-blue-50">
+                      <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-cyan-300 px-3 py-2 text-xs font-bold text-slate-950 transition group-hover:bg-cyan-200">
                         View credential <ExternalLink size={12} />
                       </span>
                     </div>
@@ -168,7 +168,7 @@ export default function Journey() {
                       <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                         {certification.issuer} · {certification.period}
                       </p>
-                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
+                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-cyan-700 dark:text-cyan-300">
                         View <ExternalLink size={12} />
                       </span>
                     </>
