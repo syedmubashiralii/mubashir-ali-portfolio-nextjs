@@ -99,7 +99,8 @@ export const skillCategories = [
 export const experiences = [
   {
     title: "Senior Flutter Developer",
-    company: "DPL (deployed to Axian Group)",
+    company: "Axian Group",
+    companyUrl: "https://www.axian-group.com/",
     location: "Islamabad, PK",
     period: "Jan 2026 - Present",
     badge: "Current",
@@ -115,6 +116,7 @@ export const experiences = [
   {
     title: "Flutter Developer",
     company: "Impact IT Solutions",
+    companyUrl: "",
     location: "Islamabad, PK",
     period: "Apr 2025 - Dec 2025",
     badge: "",
@@ -130,6 +132,7 @@ export const experiences = [
   {
     title: "Senior Flutter Developer",
     company: "KodersPoint",
+    companyUrl: "",
     location: "Lahore, PK (Remote)",
     period: "Jul 2023 - Oct 2025",
     badge: "",
@@ -144,6 +147,7 @@ export const experiences = [
   {
     title: "Flutter Developer",
     company: "HeapStash Global (for Sheikh Makhtoum Neo Technologies, UAE)",
+    companyUrl: "",
     location: "Lahore, PK (Remote)",
     period: "Nov 2023 - Mar 2025",
     badge: "",
@@ -157,12 +161,12 @@ export const experiences = [
   },
   {
     title: "Flutter Mobile App Developer",
-    company: "StackLoop Technologies",
+    company: "Khastech Solutions",
+    companyUrl: "",
     location: "Islamabad, PK",
     period: "Jul 2021 - Nov 2023",
     badge: "",
-    // documentLink: "/Experience-Letter-StackLoop-Technologies.pdf",
-    documentLink: "",
+    documentLink: "/Experience-Letter-Khastech.pdf",
     highlights: [
       "Developed and published 20+ Flutter applications to Google Play and Apple App Store.",
       "Delivered AI-powered image processing apps for enhancement, background removal, and sketch effects.",

@@ -47,7 +47,15 @@ export default function Journey() {
                   )}
                 </div>
                 <h3 className="mt-4 text-lg font-bold text-slate-950 dark:text-white">{experience.title}</h3>
-                <p className="mt-1 text-sm font-semibold text-cyan-700 dark:text-cyan-300">{experience.company}</p>
+                <p className="mt-1 text-sm font-semibold text-cyan-700 dark:text-cyan-300">
+                  {experience.companyUrl ? (
+                    <a href={experience.companyUrl} target="_blank" rel="noreferrer" className="hover:underline">
+                      {experience.company}
+                    </a>
+                  ) : (
+                    experience.company
+                  )}
+                </p>
                 <div className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
                   <p className="flex items-center gap-2">
                     <Calendar size={15} /> {experience.period}
