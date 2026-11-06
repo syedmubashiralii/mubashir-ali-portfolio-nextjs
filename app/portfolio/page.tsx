@@ -1,66 +1,88 @@
-"use client";
-
-import { ArrowUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Download, Mail } from "lucide-react";
+import Link from "next/link";
 import About from "@/app/components/About";
 import AgenticAI from "@/app/components/AgenticAI";
 import ContactSection from "@/app/components/ContactSection";
-import Hero from "@/app/components/Hero";
+import Credentials from "@/app/components/Credentials";
 import Journey from "@/app/components/Journey";
-import Projects from "@/app/components/Projects";
+import { GithubNote, ProjectGrid } from "@/app/components/Projects";
 import ResumeViewer from "@/app/components/ResumeViewer";
 import Skills from "@/app/components/Skills";
+import JsonLd from "@/app/components/site/JsonLd";
+import PageHero from "@/app/components/site/PageHero";
+import SectionHeading from "@/app/components/site/SectionHeading";
+import SiteShell from "@/app/components/site/SiteShell";
+import { contact, stats } from "@/app/data/portfolio";
+import { buildBreadcrumbJsonLd, buildProfilePageJsonLd } from "@/app/data/seo";
+import { portfolioSections } from "@/app/data/site";
 
 export default function PortfolioPage() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setShowScrollTop(window.scrollY > 520);
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const scrollToHash = () => {
-      const sectionId = window.location.hash.slice(1);
-      if (!sectionId) return;
-
-      const section = document.getElementById(sectionId);
-      if (!section) return;
-
-      const root = document.documentElement;
-      const previousScrollBehavior = root.style.scrollBehavior;
-      root.style.scrollBehavior = "auto";
-      section.scrollIntoView({ behavior: "auto", block: "start" });
-      root.style.scrollBehavior = previousScrollBehavior;
-    };
-
-    scrollToHash();
-    window.addEventListener("hashchange", scrollToHash);
-    return () => window.removeEventListener("hashchange", scrollToHash);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-[#eef2f3] text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-50">
-      <Hero />
+    <SiteShell>
+      <JsonLd id="profile-jsonld" data={buildProfilePageJsonLd()} />
+      <JsonLd id="breadcrumb-jsonld" data={buildBreadcrumbJsonLd("Portfolio", "/portfolio")} />
+
+      <PageHero
+        id="home"
+        eyebrow="Portfolio"
+        title="Five years of shipped products, in one place."
+        description={`I'm ${contact.name}, a senior engineer working across fintech, telecom, POS, travel, and consumer products. Here's the experience, the skills, and the work behind it.`}
+      >
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href={contact.resumeUrl} download="Syed_Mubashir_Ali_Resume.pdf" className="btn btn-volt">
+            <Download size={17} aria-hidden="true" /> Download resume
+          </a>
+          <Link href="/portfolio#contact" className="btn btn-ghost-dark">
+            <Mail size={17} aria-hidden="true" /> Get in touch
+          </Link>
+        </div>
+        <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="bg-pine-950 p-5">
+              <dd className="font-display text-4xl font-bold text-paper">{stat.value}</dd>
+              <dt className="mt-1 text-sm text-sage">{stat.label}</dt>
+            </div>
+          ))}
+        </dl>
+      </PageHero>
+
+      <nav aria-label="Portfolio sections" className="sticky top-16 z-40 border-b border-rule bg-paper/95 backdrop-blur">
+        <ul className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2 sm:px-6 lg:px-8">
+          {portfolioSections.map((section) => (
+            <li key={section.href}>
+              <Link
+                href={section.href}
+                className="block rounded-full px-3 py-1.5 text-sm font-medium whitespace-nowrap text-moss transition-colors hover:bg-pine-950 hover:text-paper"
+              >
+                {section.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       <About />
-      <AgenticAI />
+      <AgenticAI id="ai" />
       <Journey />
       <Skills />
-      <Projects />
+      <Credentials />
+
+      <section id="projects" className="bg-bone px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Projects"
+            title="Selected work from production environments."
+            intro="Telecom self-care, enterprise POS, student platforms, fintech, travel, healthcare, marketplaces, streaming, e-commerce, and location utilities."
+          />
+          <div className="mt-12">
+            <ProjectGrid />
+          </div>
+          <GithubNote />
+        </div>
+      </section>
+
       <ResumeViewer />
       <ContactSection />
-
-      {showScrollTop && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-md border border-white/20 bg-slate-950 text-cyan-300 shadow-lg shadow-slate-950/20 transition hover:-translate-y-0.5 hover:bg-cyan-300 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={18} />
-        </button>
-      )}
-    </div>
+    </SiteShell>
   );
 }

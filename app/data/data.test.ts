@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { certifications, contact, experiences, skillCategories, stats } from "./portfolio";
+import { certifications, contact, experiences, projects, skillCategories, stats } from "./portfolio";
+import { packages } from "./site";
 
 describe("portfolio data", () => {
   it("starts public experience in 2021 and shows the Khastech experience letter", () => {
@@ -15,11 +16,11 @@ describe("portfolio data", () => {
     );
   });
 
-  it("positions the profile for mobile, web, desktop, and native delivery", () => {
+  it("positions the profile around Flutter, native delivery, and AI", () => {
     const coreTechnologies = skillCategories.find((category) => category.title === "Core Technologies");
     const aiEngineering = skillCategories.find((category) => category.title === "AI-Assisted Engineering");
 
-    expect(contact.role).toBe("Senior Mobile, Web & Desktop App Developer");
+    expect(contact.role).toBe("Senior Flutter & AI-Native Product Engineer");
     expect(contact.email).toBe("sydmubashirali@gmail.com");
     expect(coreTechnologies?.skills).toEqual(
       expect.arrayContaining(["Flutter", "React Native", "Native Android", "Native iOS"]),
@@ -34,6 +35,40 @@ describe("portfolio data", () => {
         issuer: "Code With Mosh",
         period: "Jun 2026",
         credentialId: "cert_7by1h60w",
+      }),
+    );
+  });
+
+  it("includes telecom work, since the site markets it", () => {
+    expect(projects.some((project) => project.category.includes("Telecom"))).toBe(true);
+  });
+
+  it("keeps social links free of tracking parameters", () => {
+    for (const url of [contact.github, contact.linkedin, contact.instagram, contact.x]) {
+      expect(new URL(url).search).toBe("");
+    }
+  });
+});
+
+describe("package data", () => {
+  it("publishes only confirmed package links", () => {
+    expect(packages).toContainEqual(
+      expect.objectContaining({
+        slug: "nexio",
+        status: "Published",
+        publisher: "syedmubashirali.com",
+        version: "0.2.0",
+        githubUrl: "https://github.com/syedmubashiralii/nexio",
+        pubUrl: "https://pub.dev/packages/nexio",
+      }),
+    );
+    expect(packages).toContainEqual(
+      expect.objectContaining({
+        slug: "system-contact-picker",
+        status: "Published",
+        version: "0.0.4",
+        githubUrl: "https://github.com/syedmubashiralii/system_contact_picker",
+        pubUrl: "https://pub.dev/packages/system_contact_picker",
       }),
     );
   });

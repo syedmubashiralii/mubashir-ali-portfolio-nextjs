@@ -1,161 +1,57 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Github, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
-import { contact } from "../data/portfolio";
-import { Button } from "./ui/button";
+import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
+import { contact } from "@/app/data/portfolio";
+import ContactForm from "./ContactForm";
 
 const socialLinks = [
-  { href: contact.linkedin, label: "LinkedIn", icon: <Linkedin size={18} /> },
-  { href: contact.github, label: "GitHub", icon: <Github size={18} /> },
-  { href: contact.instagram, label: "Instagram", icon: <Instagram size={18} /> },
-  { href: contact.x, label: "X", icon: <Twitter size={18} /> },
+  { href: contact.linkedin, label: "LinkedIn", icon: Linkedin },
+  { href: contact.github, label: "GitHub", icon: Github },
+  { href: contact.x, label: "X", icon: Twitter },
+  { href: contact.instagram, label: "Instagram", icon: Instagram },
 ];
 
-export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+const rowClass = "flex items-center gap-3 border-b border-white/15 py-4 break-all";
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setFormData((previous) => ({ ...previous, [name]: value }));
-  };
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const message = [
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      `Subject: ${formData.subject}`,
-      `Message: ${formData.message}`,
-    ].join("\n");
-
-    window.open(`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
-
+export default function ContactSection({ as: Heading = "h2" }: Readonly<{ as?: "h1" | "h2" }>) {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#061019] px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28">
-      <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(103,232,249,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(103,232,249,0.08)_1px,transparent_1px)] [background-size:52px_52px] [mask-image:linear-gradient(to_right,black,transparent)]" />
-      <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-        >
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">Start a product conversation</p>
-          <h2 className="mt-4 text-balance text-4xl font-bold leading-tight tracking-[-0.035em] sm:text-5xl">
-            Need a product built, rescued, or accelerated with AI?
-          </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-300">
-            Share the idea, platform, broken flow, deadline, or release blocker. I can support Flutter, React Native,
-            native iOS or Android, modern web apps, desktop delivery, Agentic AI workflows, and MCP integrations. The
-            form opens WhatsApp with your message pre-filled for a fast project conversation.
+    <section id="contact" className="bg-pine-950 px-4 py-16 text-paper sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div>
+          <p className="eyebrow text-volt">Hire a senior Flutter developer</p>
+          <Heading className="mt-4 text-[clamp(2.6rem,5.5vw,4.5rem)] leading-[1] font-bold">
+            Need a product built, rescued, or sped up?
+          </Heading>
+          <p className="mt-6 max-w-xl text-pretty text-lg leading-8 text-sage">
+            Share the idea, platform, broken flow, deadline, or release blocker. Flutter, React Native, native iOS and
+            Android, web, desktop, Agentic AI, and MCP work are all on the table.
           </p>
 
-          <div className="mt-8 space-y-3">
-            <Link
-              href={`mailto:${contact.email}?subject=Portfolio%20Inquiry`}
-              className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200 transition hover:border-cyan-300/60 hover:bg-white/[0.08]"
-            >
-              <Mail size={18} /> {contact.email}
-            </Link>
-            <Link
-              href={`tel:${contact.phone.replace(/\s/g, "")}`}
-              className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200 transition hover:border-cyan-300/60 hover:bg-white/[0.08]"
-            >
-              <Phone size={18} /> {contact.phone}
-            </Link>
-            <div className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200">
-              <MapPin size={18} /> {contact.location}
-            </div>
+          <div className="mt-8 border-t border-white/15">
+            <a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noopener noreferrer" className={`${rowClass} transition-colors hover:text-volt`}>
+              <MessageCircle size={18} className="shrink-0" aria-hidden="true" /> Chat on WhatsApp
+            </a>
+            <a href={`mailto:${contact.email}?subject=Project%20Inquiry`} className={`${rowClass} transition-colors hover:text-volt`}>
+              <Mail size={18} className="shrink-0" aria-hidden="true" /> {contact.email}
+            </a>
+            <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className={`${rowClass} transition-colors hover:text-volt`}>
+              <Phone size={18} className="shrink-0" aria-hidden="true" /> {contact.phone}
+            </a>
+            <p className={rowClass}>
+              <MapPin size={18} className="shrink-0" aria-hidden="true" /> {contact.location}, working worldwide
+            </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="grid h-11 w-11 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300/60 hover:text-cyan-300"
-              >
-                {social.icon}
-              </Link>
+          <ul className="mt-6 flex gap-2">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <li key={label}>
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 transition-colors hover:border-volt hover:text-volt">
+                  <Icon size={18} aria-hidden="true" />
+                </a>
+              </li>
             ))}
-          </div>
-        </motion.div>
+          </ul>
+        </div>
 
-        <motion.form
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.08 }}
-          className="rounded-xl border border-cyan-300/20 bg-[#0a1721] p-6 text-white shadow-2xl shadow-black/30"
-        >
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm font-medium text-slate-200">
-              Name
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
-                required
-              />
-            </label>
-            <label className="text-sm font-medium text-slate-200">
-              Email
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="you@example.com"
-                className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
-                required
-              />
-            </label>
-          </div>
-          <label className="mt-4 block text-sm font-medium text-slate-200">
-            Subject
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder="App, Agentic AI, MCP, role, consultation..."
-              className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
-              required
-            />
-          </label>
-          <label className="mt-4 block text-sm font-medium text-slate-200">
-            Message
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Share the app, timeline, stack, or problem you want to solve."
-              rows={6}
-              className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.04] p-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/10"
-              required
-            />
-          </label>
-          <Button type="submit" className="mt-5 h-12 w-full rounded-md bg-cyan-300 font-bold text-slate-950 hover:bg-cyan-200">
-            <Send className="h-4 w-4" /> Send via WhatsApp
-          </Button>
-        </motion.form>
+        <ContactForm />
       </div>
     </section>
   );

@@ -1,96 +1,207 @@
 import type { Metadata } from "next";
-import { certifications, contact, focusAreas, projects, skillCategories } from "./portfolio";
-import { packages } from "./site";
+import { certifications, contact, education, focusAreas, projects, skillCategories } from "./portfolio";
+import { faqs, packages } from "./site";
 
 export const siteUrl = "https://syedmubashirali.com";
 
-const profileImage = "/profile-image.png";
+const profileImage = "/profile-image.jpg";
 const profileImageUrl = `${siteUrl}${profileImage}`;
-const socialImage = "/og.png";
+const socialImage = {
+  url: "/og.jpg",
+  width: 1200,
+  height: 630,
+  alt: `${contact.name}, ${contact.role}`,
+};
 const siteName = "Syed Mubashir Ali";
+const xHandle = "@sydmubashirali";
 
-export const seoKeywords = [
-  "Senior Mobile App Developer",
-  "mobile app developer",
-  "Senior Flutter Developer",
+type RoutePath = "/" | "/portfolio" | "/packages" | "/projects" | "/contact";
+
+/** Terms every page shares. Each page adds its own via `keywords` below. */
+export const coreKeywords = [
+  "Syed Mubashir Ali",
+  "senior Flutter developer",
   "hire Flutter developer",
+  "AI-native engineer",
+  "mobile app developer",
+];
+
+const homeKeywords = [
+  "AI-native product engineer",
   "Flutter app development",
+  "remote Flutter developer",
+  "freelance Flutter developer",
+  "Flutter consultant",
+  "Flutter developer Pakistan",
+  "Flutter developer Islamabad",
+  "cross-platform app developer",
   "React Native developer",
   "native Android developer",
   "native iOS developer",
-  "web app developer",
-  "desktop app developer",
-  "Flutter fintech developer",
-  "Flutter telecom app developer",
-  "Flutter POS developer",
-  "Flutter web developer",
-  "Dart developer",
-  "mobile app developer Pakistan",
-  "cross-platform app developer",
   "Agentic AI developer",
   "AI-assisted software engineer",
-  "Model Context Protocol developer",
-  "MCP integrations",
+  "Model Context Protocol integrations",
+  "MCP workflows",
   "AI coding agents",
+  "Flutter app rescue",
+  "Flutter performance optimization",
+];
+
+const portfolioKeywords = [
+  "Flutter developer portfolio",
+  "senior Flutter engineer resume",
+  "Dart developer",
+  "Flutter BLoC developer",
+  "Clean Architecture Flutter",
+  "Firebase developer",
+  "Next.js developer",
+  "TypeScript developer",
+  "Claude Code developer",
+];
+
+const projectKeywords = [
+  "Flutter app projects",
+  "Flutter fintech developer",
+  "fintech app developer",
+  "wallet app developer",
+  "Flutter desktop developer",
+  "Flutter desktop POS",
+  "Flutter telecom app developer",
+  "telecom self-care app",
+  "Flutter POS developer",
+  "POS app development",
+  "Flutter web developer",
+  "Flutter web admin panel",
+  "Plaid Flutter integration",
+  "Stripe Flutter integration",
+  "healthcare app developer",
+  "marketplace app developer",
+];
+
+const packageKeywords = [
+  "Flutter packages",
+  "Flutter plugins",
+  "open source Flutter",
+  "pub.dev verified publisher",
+  "Flutter networking package",
+  "Dio networking runtime",
+  "nexio Flutter",
+  "system_contact_picker",
+  "Flutter contact picker",
+  "Android 17 contact picker",
+  "native Flutter plugin developer",
+];
+
+const contactKeywords = [
+  "hire senior Flutter developer",
+  "hire mobile app developer",
+  "hire Flutter consultant",
+  "Flutter developer for hire",
+  "start a mobile app project",
+  "Flutter app rescue services",
+  "hire AI-native engineer",
 ];
 
 const leadDescription =
-  "Hire a senior app engineer for Flutter, native mobile, Next.js, Agentic AI and MCP workflows, production delivery, and complex app rescue work.";
+  "Senior Flutter and AI-native product engineer building fintech, telecom, and POS apps. 5+ years, 20+ production apps. Hire for new builds and app rescue.";
 
-function routeUrl(path: string) {
+function routeUrl(path: RoutePath) {
   return `${siteUrl}${path === "/" ? "" : path}`;
+}
+
+function absoluteUrl(url: string) {
+  return url.startsWith("/") ? `${siteUrl}${url}` : url;
 }
 
 function createPageMetadata({
   title,
   description,
   path,
+  keywords,
 }: {
   title: string;
   description: string;
-  path: "/" | "/portfolio" | "/packages" | "/projects" | "/contact";
+  path: RoutePath;
+  keywords: string[];
 }): Metadata {
-  const url = routeUrl(path);
-
   return {
     title,
     description,
-    keywords: seoKeywords,
+    keywords: [...coreKeywords, ...keywords],
     alternates: { canonical: path },
     openGraph: {
       title: `${title} | ${siteName}`,
       description,
-      url,
+      url: routeUrl(path),
       siteName,
-      type: path === "/portfolio" ? "profile" : "website",
+      type: "website",
       locale: "en_US",
-      images: [
-        {
-          url: socialImage,
-          width: 1734,
-          height: 907,
-          alt: `${contact.name} — Senior App Engineer, Agentic AI and MCPs`,
-        },
-      ],
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
+      creator: xHandle,
       title: `${title} | ${siteName}`,
       description,
-      images: [socialImage],
+      images: [socialImage.url],
     },
   };
 }
+
+const homeTitle = "Senior Flutter & AI-Native Engineer";
+
+export const homeMetadata: Metadata = {
+  ...createPageMetadata({
+    title: homeTitle,
+    description: leadDescription,
+    path: "/",
+    keywords: homeKeywords,
+  }),
+  // A layout's title template skips pages in its own segment, so "/" needs the full title.
+  title: { absolute: `${homeTitle} | ${siteName}` },
+};
+
+export const portfolioMetadata = createPageMetadata({
+  title: "Flutter Engineer Portfolio & Resume",
+  description:
+    "Syed Mubashir Ali's experience across Axian Group, fintech, telecom, and POS products, plus skills, certifications, shipped projects, and a downloadable resume.",
+  path: "/portfolio",
+  keywords: portfolioKeywords,
+});
+
+export const packagesMetadata = createPageMetadata({
+  title: "Open-Source Flutter Packages",
+  description:
+    "Flutter packages from verified pub.dev publisher syedmubashirali.com, including the Nexio networking runtime for Dio and a native Android and iOS contact picker.",
+  path: "/packages",
+  keywords: packageKeywords,
+});
+
+export const projectsMetadata = createPageMetadata({
+  title: "Flutter Projects: Fintech, Telecom & POS",
+  description:
+    "Selected Flutter apps across fintech, telecom, POS, travel, healthcare, marketplaces, streaming, e-commerce, and location utilities by Syed Mubashir Ali.",
+  path: "/projects",
+  keywords: projectKeywords,
+});
+
+export const contactMetadata = createPageMetadata({
+  title: "Hire a Senior Flutter Developer",
+  description:
+    "Start a Flutter, native mobile, web, or AI-assisted project with Syed Mubashir Ali. Reach out on WhatsApp or email about a new build, app rescue, or senior support.",
+  path: "/contact",
+  keywords: contactKeywords,
+});
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Senior App & Agentic AI Engineer | Syed Mubashir Ali",
+    default: `Senior Flutter & AI-Native Engineer | ${siteName}`,
     template: `%s | ${siteName}`,
   },
   description: leadDescription,
-  keywords: seoKeywords,
+  keywords: [...coreKeywords, ...homeKeywords],
   authors: [{ name: contact.name, url: siteUrl }],
   creator: contact.name,
   publisher: contact.name,
@@ -114,62 +225,22 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Senior App & Agentic AI Engineer | Syed Mubashir Ali",
+    title: `Senior Flutter & AI-Native Engineer | ${siteName}`,
     description: leadDescription,
     url: siteUrl,
     siteName,
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: socialImage,
-        width: 1734,
-        height: 907,
-        alt: `${contact.name} — Senior App Engineer, Agentic AI and MCPs`,
-      },
-    ],
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Senior App & Agentic AI Engineer | Syed Mubashir Ali",
+    creator: xHandle,
+    title: `Senior Flutter & AI-Native Engineer | ${siteName}`,
     description: leadDescription,
-    images: [socialImage],
+    images: [socialImage.url],
   },
 };
-
-export const homeMetadata = createPageMetadata({
-  title: "Senior App Engineer for Flutter, Agentic AI & MCPs",
-  description: leadDescription,
-  path: "/",
-});
-
-export const portfolioMetadata = createPageMetadata({
-  title: "App Engineering, Agentic AI & MCP Portfolio",
-  description:
-    "Explore Syed Mubashir Ali's app engineering experience, Agentic AI and MCP workflow, production projects, certifications, skills, and delivery proof.",
-  path: "/portfolio",
-});
-
-export const packagesMetadata = createPageMetadata({
-  title: "Flutter Packages and Plugins",
-  description:
-    "Explore Flutter packages by verified publisher syedmubashirali.com, including the Nexio networking runtime and native Android and iOS contact picker tooling.",
-  path: "/packages",
-});
-
-export const projectsMetadata = createPageMetadata({
-  title: "Flutter Apps and Product Projects",
-  description:
-    "Selected Flutter projects across fintech, telecom, POS, travel, healthcare, marketplaces, streaming, e-commerce, and location utilities.",
-  path: "/projects",
-});
-
-export const contactMetadata = createPageMetadata({
-  title: "Start an App, Agentic AI or MCP Project",
-  description:
-    "Start a mobile, web, desktop, Agentic AI, or MCP-enabled project with Syed Mubashir Ali for new product delivery, app rescue, or senior engineering support.",
-  path: "/contact",
-});
 
 const knowsAbout = [
   "Flutter",
@@ -177,6 +248,7 @@ const knowsAbout = [
   "Fintech apps",
   "Telecom self-care",
   "POS systems",
+  "Flutter Desktop",
   "Flutter Web",
   "React Native",
   "Native Android development",
@@ -210,6 +282,11 @@ export function buildPersonJsonLd() {
       addressLocality: "Islamabad",
       addressCountry: "PK",
     },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: education.institution,
+    },
+    knowsLanguage: ["en", "ur"],
     knowsAbout,
     hasOccupation: {
       "@type": "Occupation",
@@ -223,7 +300,7 @@ export function buildPersonJsonLd() {
         "@type": "Organization",
         name: certification.issuer,
       },
-      url: certification.link,
+      url: absoluteUrl(certification.link),
       ...(certification.credentialId ? { identifier: certification.credentialId } : {}),
     })),
     contactPoint: {
@@ -233,7 +310,13 @@ export function buildPersonJsonLd() {
       telephone: contact.phone,
       availableLanguage: ["en", "ur"],
     },
-    sameAs: [contact.github, contact.linkedin, contact.instagram, contact.x],
+    sameAs: [
+      contact.github,
+      contact.linkedin,
+      contact.instagram,
+      contact.x,
+      "https://pub.dev/publishers/syedmubashirali.com",
+    ],
   };
 }
 
@@ -291,6 +374,44 @@ export function buildServiceJsonLd() {
   };
 }
 
+export function buildProfilePageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteUrl}/portfolio#profile`,
+    url: `${siteUrl}/portfolio`,
+    name: portfolioMetadata.title,
+    mainEntity: { "@id": `${siteUrl}/#person` },
+  };
+}
+
+export function buildFaqJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteUrl}/#faq`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function buildBreadcrumbJsonLd(name: string, path: Exclude<RoutePath, "/">) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name, item: routeUrl(path) },
+    ],
+  };
+}
+
 export function buildProjectListJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -306,10 +427,10 @@ export function buildProjectListJsonLd() {
         name: project.title,
         description: project.description,
         applicationCategory: project.category,
-        programmingLanguage: "Dart",
         runtimePlatform: "Flutter",
         keywords: project.tags.join(", "),
         url: project.liveLink || `${siteUrl}/projects`,
+        author: { "@id": `${siteUrl}/#person` },
       },
     })),
   };
@@ -333,6 +454,7 @@ export function buildPackageListJsonLd() {
         codeRepository: item.githubUrl,
         url: item.pubUrl || `${siteUrl}/packages`,
         version: item.version,
+        author: { "@id": `${siteUrl}/#person` },
         publisher: item.publisher
           ? {
               "@type": "Organization",
@@ -354,15 +476,15 @@ export function buildLlmsText() {
 
   return `# Syed Mubashir Ali
 
-> Senior app engineer with deep Flutter expertise and a confident Agentic AI and MCP-enabled workflow.
+> Senior Flutter and AI-native product engineer with 5+ years of experience and 20+ production apps across fintech, telecom, and POS.
 
-Hire Syed for Flutter and React Native apps, native iOS and Android development, web and desktop products, Agentic AI and MCP workflows, app rescue, fintech systems, telecom self-care, POS platforms, and store release support.
+Hire Syed for Flutter and React Native apps, native iOS and Android development, web and Flutter desktop products, Agentic AI and MCP workflows, app rescue, fintech systems, telecom self-care, POS platforms, and store release support.
 
 ## Best-fit project work
 - Production Flutter mobile apps for Android and iOS
 - React Native and native Android or iOS development
 - Flutter Web admin panels and product dashboards
-- Responsive web and desktop applications
+- Flutter desktop apps and responsive web applications
 - Fintech, wallet, telecom, POS, travel, healthcare, marketplace, and utility apps
 - App rescue, debugging, performance hardening, and release readiness
 - Native Android and iOS integrations through Flutter plugins
@@ -370,9 +492,9 @@ Hire Syed for Flutter and React Native apps, native iOS and Android development,
 - MCP integrations that connect AI agents with repositories, tools, documentation, and services
 
 ## Priority pages
-- [Start a Flutter project](${siteUrl}/contact): Fast WhatsApp, email, phone, and social contact paths.
+- [Hire Syed](${siteUrl}/contact): WhatsApp, email, phone, and social contact paths.
 - [Portfolio](${siteUrl}/portfolio): Experience, resume, skills, certifications, and project proof.
-- [Apps and projects](${siteUrl}/projects): Selected shipped product work by domain.
+- [Apps and projects](${siteUrl}/projects): Selected product work by domain.
 - [Flutter packages](${siteUrl}/packages): Reusable Flutter plugins and Dart developer tools.
 
 ## Selected proof

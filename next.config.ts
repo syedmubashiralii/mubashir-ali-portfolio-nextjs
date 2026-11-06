@@ -2,7 +2,15 @@ import type { NextConfig } from "next";
 
 const isSitesStaticExport = process.env.SITES_STATIC_EXPORT === "1";
 
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+];
+
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   ...(isSitesStaticExport
     ? { output: "export" }
     : {
@@ -16,26 +24,23 @@ const nextConfig: NextConfig = {
             },
           ];
         },
+        async headers() {
+          return [
+            { source: "/:path*", headers: securityHeaders },
+            {
+              // Experience letters stay viewable from the site but out of search results.
+              source: "/:file(Experience-Letter-.+\\.pdf|KP-Experience-Letter\\.jpg)",
+              headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+            },
+          ];
+        },
       }),
   turbopack: {
     root: process.cwd(),
   },
   images: {
     unoptimized: isSitesStaticExport,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "play-lh.googleusercontent.com", // if you use Play Store images
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
   },
 };
 

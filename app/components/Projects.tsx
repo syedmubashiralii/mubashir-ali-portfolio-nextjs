@@ -1,135 +1,116 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Building2,
   Camera,
   Clapperboard,
+  Code2,
   Github,
   GraduationCap,
   HeartPulse,
   MapPinned,
   Plane,
+  RadioTower,
   ShoppingCart,
   WalletCards,
+  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { projects } from "../data/portfolio";
+import { contact, projects } from "@/app/data/portfolio";
 
-const visuals = [
-  { icon: Building2, glow: "bg-cyan-300/15" },
-  { icon: GraduationCap, glow: "bg-sky-300/15" },
-  { icon: WalletCards, glow: "bg-emerald-300/15" },
-  { icon: Plane, glow: "bg-cyan-300/15" },
-  { icon: HeartPulse, glow: "bg-rose-300/15" },
-  { icon: Camera, glow: "bg-violet-300/15" },
-  { icon: Clapperboard, glow: "bg-pink-300/15" },
-  { icon: ShoppingCart, glow: "bg-amber-300/15" },
-  { icon: MapPinned, glow: "bg-teal-300/15" },
-] as const;
+const icons: Record<string, LucideIcon> = {
+  "Yas SelfCare App": RadioTower,
+  iPOS: Building2,
+  Pulse: GraduationCap,
+  "Neo One": WalletCards,
+  "Neo Pass": Plane,
+  Elemed: HeartPulse,
+  MyClickerr: Camera,
+  BrightFlix: Clapperboard,
+  "Nop Commerce App": ShoppingCart,
+  "Buddy Tracker": MapPinned,
+};
 
-export default function Projects() {
+const tones = ["bg-volt", "bg-coral", "bg-lilac", "bg-sun"];
+
+type Project = (typeof projects)[number];
+
+export function ProjectCard({ project, index }: Readonly<{ project: Project; index: number }>) {
+  const Icon = icons[project.title] ?? Code2;
+  const HeadingTone = tones[index % tones.length];
+
   return (
-    <section id="projects" className="bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
-        >
-          <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">Selected projects</p>
-            <h2 className="mt-4 text-balance text-4xl font-bold tracking-[-0.035em] text-slate-950 sm:text-5xl">
-              Selected work from shipped product environments.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base leading-8 text-slate-600 lg:justify-self-end">
-            Production work across enterprise POS, student platforms, fintech, travel, healthcare, marketplaces,
-            streaming, e-commerce, and location utilities—built around real operational constraints.
-          </p>
-        </motion.div>
-
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => {
-            const visual = visuals[index] ?? visuals[0];
-            const Icon = visual.icon;
-
-            return (
-              <motion.article
-                key={project.title}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.42, delay: index * 0.035 }}
-                className="group flex min-h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-[#f7f9f9] transition hover:-translate-y-1 hover:border-cyan-400 hover:bg-white hover:shadow-xl hover:shadow-slate-900/10"
-              >
-                <div className="relative min-h-40 overflow-hidden bg-[#061019] p-5 text-white">
-                  <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full ${visual.glow} blur-2xl`} />
-                  <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(103,232,249,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(103,232,249,0.12)_1px,transparent_1px)] [background-size:28px_28px]" />
-                  <div className="relative flex min-h-32 flex-col justify-between">
-                    <div className="flex items-start justify-between gap-4">
-                      <span className="grid h-11 w-11 place-items-center rounded-md border border-cyan-300/20 bg-cyan-300/10 text-cyan-300">
-                        <Icon size={21} />
-                      </span>
-                      <span className="font-mono text-4xl font-black text-white/10">{String(index + 1).padStart(2, "0")}</span>
-                    </div>
-                    <div className="mt-8">
-                      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-300">{project.category}</p>
-                      <h3 className="mt-2 text-2xl font-bold tracking-tight">{project.title}</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col p-5">
-                  <p className="text-sm leading-7 text-slate-700">{project.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-600">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                    {project.liveLink && (
-                      <Link href={project.liveLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-slate-950 px-3 py-2 text-xs font-bold text-white transition hover:bg-cyan-300 hover:text-slate-950">
-                        Open project <ArrowUpRight size={13} />
-                      </Link>
-                    )}
-                    {project.githubLink && (
-                      <Link href={project.githubLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-700">
-                        <Github size={13} /> Code
-                      </Link>
-                    )}
-                    {!project.liveLink && !project.githubLink && (
-                      <Link href="/contact" className="inline-flex items-center gap-2 text-xs font-bold text-cyan-700 transition hover:text-cyan-900">
-                        Discuss similar work <ArrowUpRight size={13} />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </motion.article>
-            );
-          })}
+    <article className="reveal flex h-full flex-col overflow-hidden rounded-3xl border border-rule bg-paper">
+      <div className={`p-6 text-pine-950 ${HeadingTone}`}>
+        <div className="flex items-center justify-between gap-4">
+          <p className="text-sm font-semibold">{project.category}</p>
+          <Icon size={22} aria-hidden="true" />
         </div>
+        <h3 className="mt-10 text-3xl leading-tight font-bold">{project.title}</h3>
+      </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-5 rounded-xl bg-[#061019] p-6 text-white sm:flex-row sm:items-center lg:p-8">
-          <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">More engineering work</p>
-            <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-300">
-              Open-source packages, experiments, and public code live on GitHub alongside these production case studies.
-            </p>
-          </div>
-          <Link href={contactGithub} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center gap-2 rounded-md bg-cyan-300 px-4 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-cyan-200">
-            <Github size={16} /> Visit GitHub
-          </Link>
+      <div className="flex flex-1 flex-col p-6">
+        <p className="leading-7 text-moss">{project.description}</p>
+        <ul className="mt-5 flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <li key={tag} className="chip !text-xs">
+              {tag}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 pt-6 text-sm font-semibold">
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${project.title}`}
+              className="inline-flex items-center gap-1.5 py-1 underline underline-offset-4 hover:text-pine-600"
+            >
+              Open project <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          )}
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} source`}
+              className="inline-flex items-center gap-1.5 py-1 underline underline-offset-4 hover:text-pine-600"
+            >
+              <Github size={15} aria-hidden="true" /> Code
+            </a>
+          )}
+          {!project.liveLink && !project.githubLink && (
+            <Link href="/contact" className="inline-flex items-center gap-1.5 py-1 underline underline-offset-4 hover:text-pine-600">
+              Discuss similar work <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
+          )}
         </div>
       </div>
-    </section>
+    </article>
   );
 }
 
-const contactGithub = "https://github.com/syedmubashiralii";
+export function ProjectGrid({ items = projects }: Readonly<{ items?: readonly Project[] }>) {
+  return (
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((project, index) => (
+        <ProjectCard key={project.title} project={project} index={index} />
+      ))}
+    </div>
+  );
+}
+
+export function GithubNote() {
+  return (
+    <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-3xl bg-pine-950 p-7 text-paper sm:flex-row sm:items-center">
+      <p className="max-w-2xl leading-7 text-sage">
+        Many of these are private client products. Open-source packages and public code live on GitHub.
+      </p>
+      <a href={contact.github} target="_blank" rel="noopener noreferrer" className="btn btn-volt shrink-0">
+        <Github size={17} aria-hidden="true" /> Visit GitHub
+      </a>
+    </div>
+  );
+}

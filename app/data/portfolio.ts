@@ -1,7 +1,7 @@
 export const contact = {
   name: "Syed Mubashir Ali",
-  role: "Senior Mobile, Web & Desktop App Developer",
-  tagline: "Flutter · React Native · Native iOS & Android",
+  role: "Senior Flutter & AI-Native Product Engineer",
+  tagline: "Flutter · React Native · Native iOS & Android · Next.js",
   email: "sydmubashirali@gmail.com",
   phone: "+92 310 5205275",
   whatsapp: "923105205275",
@@ -9,7 +9,7 @@ export const contact = {
   github: "https://github.com/syedmubashiralii",
   linkedin: "https://www.linkedin.com/in/syed-mubashir-ali-796122177",
   instagram: "https://www.instagram.com/syedmubashiralii",
-  x: "https://x.com/sydmubashirali?t=kf_Iqdl98LMHCTkKhfmfpw&s=08",
+  x: "https://x.com/sydmubashirali",
   resumeUrl: "/Syed_Mubashir_Ali_Resume.pdf",
 };
 
@@ -17,7 +17,7 @@ export const stats = [
   { value: "5+", label: "Years Experience" },
   { value: "20+", label: "Production Apps" },
   { value: "5+", label: "Industries" },
-  { value: "4", label: "Delivery Platforms" },
+  { value: "4", label: "Platforms: iOS, Android, Web, Desktop" },
 ];
 
 export const focusAreas = [
@@ -37,6 +37,7 @@ export const skillCategories = [
     title: "Core Technologies",
     skills: [
       "Flutter",
+      "Flutter Desktop",
       "Dart",
       "React Native",
       "Native Android",
@@ -106,10 +107,10 @@ export const experiences = [
     badge: "Current",
     documentLink: "",
     highlights: [
-      "Embedded within Axian Group, a pan-African telecom and fintech conglomerate, delivering Flutter solutions across multiple high-impact product lines.",
-      "Developing the Tanzania Super App, a multi-service platform combining fintech, telecom, and daily utility services for the Tanzanian market.",
-      "Building digital payments, wallet management, financial services, and telecom self-care experiences.",
-      "Contributing cross-platform features for network service management and subscriber experience across African markets.",
+      "Building Flutter products at Axian Group, a pan-African telecom and fintech group.",
+      "Building the Yas SelfCare App, which lets Yas mobile subscribers manage their plans and services in one place.",
+      "Working on digital payment, wallet, and financial service features alongside telecom self-care.",
+      "Contributing cross-platform features for network services and subscriber experience across African markets.",
     ],
     stack: ["Flutter", "Dart", "Fintech APIs", "Telecom", "Clean Architecture", "BLoC"],
   },
@@ -122,12 +123,12 @@ export const experiences = [
     badge: "",
     documentLink: "",
     highlights: [
-      "Managed a Flutter POS system deployed across University of Wollongong outlets, covering inventory, purchasing, cashier, and kitchen operations.",
+      "Managed a Flutter desktop POS system deployed across University of Wollongong outlets, covering inventory, purchasing, cashier, and kitchen operations.",
       "Developed Pulse, a UOW student app for food ordering, books, vouchers, coupons, events, and memberships.",
       "Implemented discount, voucher, coupon, and promotion management flows.",
-      "Improved reliability through proactive monitoring, issue resolution, and cross-team collaboration.",
+      "Improved reliability by monitoring production issues and resolving them with other teams.",
     ],
-    stack: ["Flutter", "Dart", "POS", "Linkly", "Inventory", "Promotions"],
+    stack: ["Flutter", "Flutter Desktop", "Dart", "POS", "Linkly", "Inventory", "Promotions"],
   },
   {
     title: "Senior Flutter Developer",
@@ -138,9 +139,8 @@ export const experiences = [
     badge: "",
     documentLink: "/KP-Experience-Letter.jpg",
     highlights: [
-      "Architected and delivered cross-platform MVPs and full-scale applications for diverse clients using Flutter.",
+      "Architected and delivered Flutter MVPs and full-scale apps for clients in e-commerce, services, utilities, and business platforms.",
       "Built and deployed Flutter Web admin panels for business management workflows.",
-      "Delivered optimized, client-tailored solutions across e-commerce, services, utilities, and business platforms.",
     ],
     stack: ["Flutter", "Flutter Web", "React Native", "Java Android", "Client Delivery"],
   },
@@ -153,9 +153,9 @@ export const experiences = [
     badge: "",
     documentLink: "/Experience-Letter-HeapStash.pdf",
     highlights: [
-      "Engineered Neo One, a fintech mobile app integrating bank account linking and cryptocurrency wallet management.",
+      "Built Neo One, a fintech mobile app integrating bank account linking and cryptocurrency wallet management.",
       "Integrated IBAN generation, card issuance, Plaid open banking, Striga crypto wallets, and secure KYC flows.",
-      "Built Neo Pass, a Flutter Web international flight booking platform with crypto payment support and polished UX.",
+      "Built Neo Pass, a Flutter Web international flight booking platform with crypto payment support.",
     ],
     stack: ["Flutter", "Flutter Web", "Plaid", "Striga", "Weavr", "Crypto Payments"],
   },
@@ -171,7 +171,7 @@ export const experiences = [
       "Developed and published 20+ Flutter applications to Google Play and Apple App Store.",
       "Delivered AI-powered image processing apps for enhancement, background removal, and sketch effects.",
       "Built ICR document scanning and text extraction apps using Google ML Kit, OpenCV, and FFmpeg.",
-      "Created fitness tracking, pedometer, ads, and in-app purchase monetization flows.",
+      "Built fitness tracking and pedometer apps, with ad and in-app purchase monetization.",
     ],
     stack: ["Flutter", "Google ML Kit", "OpenCV", "FFmpeg", "AdMob", "IAP"],
   },
@@ -221,11 +221,20 @@ export const certifications = [
 
 export const projects = [
   {
+    title: "Yas SelfCare App",
+    category: "Telecom Self-Care",
+    description:
+      "Flutter self-care app for Yas, Axian Group's telecom brand, that lets subscribers manage their plans and services in one place. My current build.",
+    tags: ["Flutter", "Telecom", "Self-Care", "BLoC", "Clean Architecture"],
+    liveLink: "",
+    githubLink: "",
+  },
+  {
     title: "iPOS",
     category: "Enterprise POS",
     description:
-      "Enterprise-grade POS for UOW Australia with inventory, supplier, purchase order, cashier, kitchen, and Linkly payment workflows.",
-    tags: ["Flutter", "Dart", "Linkly", "POS", "Inventory"],
+      "Flutter desktop POS for University of Wollongong outlets in Australia, with inventory, supplier, purchase order, cashier, kitchen, and Linkly payment workflows.",
+    tags: ["Flutter Desktop", "Dart", "Linkly", "POS", "Inventory"],
     liveLink: "",
     githubLink: "",
   },
@@ -244,16 +253,16 @@ export const projects = [
     description:
       "Fintech app integrating bank account linking, IBAN generation, card issuance, and cryptocurrency wallet management.",
     tags: ["Flutter", "Plaid", "Striga", "Weavr", "Crypto"],
-    liveLink: "https://apps.apple.com/sk/app/neo-one/id6475296925",
+    liveLink: "",
     githubLink: "",
   },
   {
     title: "Neo Pass",
     category: "Travel Fintech",
     description:
-      "Flutter Web international flight booking platform with cryptocurrency payment support and pixel-accurate Figma implementation.",
+      "Flutter Web international flight booking platform with cryptocurrency payment support, built from Figma designs.",
     tags: ["Flutter Web", "Travel", "Crypto Payments", "Dart"],
-    liveLink: "https://neopass.club/key",
+    liveLink: "",
     githubLink: "",
   },
   {

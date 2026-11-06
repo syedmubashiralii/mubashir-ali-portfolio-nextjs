@@ -1,142 +1,31 @@
-"use client";
-
-import { AnimatePresence, motion } from "framer-motion";
-import { Download, ExternalLink, FileText, Maximize2, X } from "lucide-react";
-import { useState } from "react";
-import { contact } from "../data/portfolio";
-import { Button } from "./ui/button";
+import { Download, ExternalLink } from "lucide-react";
+import { contact } from "@/app/data/portfolio";
 
 export default function ResumeViewer() {
-  const [isFullScreen, setIsFullScreen] = useState(false);
-
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = contact.resumeUrl;
-    link.download = "Syed_Mubashir_Ali_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-  };
-
   return (
-    <section id="resume" className="bg-[#eef2f3] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">Resume</p>
-          <h2 className="mt-4 text-4xl font-bold tracking-[-0.035em] text-slate-950 sm:text-5xl dark:text-white">
-            Full resume, available locally on the site.
-          </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-            The page content now reflects the supplied PDF, and the same file can be previewed, opened, or downloaded.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="mt-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-900"
-        >
-          <div className="flex flex-col gap-3 border-b border-white/10 bg-[#061019] p-4 text-white sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-md bg-cyan-300 text-slate-950">
-                <FileText size={19} />
-              </div>
-              <div>
-                <h3 className="font-semibold">Syed Mubashir Ali Resume</h3>
-                <p className="text-xs text-slate-300">Senior Mobile, Web &amp; Desktop App Developer</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <Button
-                onClick={() => setIsFullScreen(true)}
-                variant="ghost"
-                size="sm"
-                className="rounded-md text-white hover:bg-white/10 hover:text-cyan-200"
-              >
-                <Maximize2 className="h-4 w-4" /> Full Screen
-              </Button>
-              <Button
-                asChild
-                variant="ghost"
-                size="sm"
-                className="rounded-md text-white hover:bg-white/10 hover:text-cyan-200"
-              >
-                <a href={contact.resumeUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4" /> Open
-                </a>
-              </Button>
-              <Button
-                onClick={handleDownload}
-                variant="ghost"
-                size="sm"
-                className="rounded-md bg-cyan-300 text-slate-950 hover:bg-cyan-200 hover:text-slate-950"
-              >
-                <Download className="h-4 w-4" /> Download
-              </Button>
-            </div>
+    <section id="resume" className="bg-paper px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="eyebrow text-pine-600">Resume</p>
+            <h2 className="mt-4 text-4xl leading-[1.04] font-bold sm:text-5xl">The one-file version.</h2>
           </div>
-
-          <div className="h-[520px] bg-slate-100 dark:bg-slate-950 md:h-[680px]">
-            <iframe src={contact.resumeUrl} title="Syed Mubashir Ali Resume" className="h-full w-full" />
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href={contact.resumeUrl} download="Syed_Mubashir_Ali_Resume.pdf" className="btn btn-pine">
+              <Download size={17} aria-hidden="true" /> Download PDF
+            </a>
+            <a href={contact.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+              <ExternalLink size={17} aria-hidden="true" /> Open in new tab
+            </a>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Mobile browsers rarely render PDFs in iframes, so the preview is desktop-only.
+            While display:none, the lazy iframe doesn't fetch the PDF. */}
+        <div className="mt-10 hidden h-[720px] overflow-hidden rounded-3xl border border-rule md:block">
+          <iframe src={contact.resumeUrl} title={`${contact.name} resume`} loading="lazy" className="h-full w-full" />
+        </div>
       </div>
-
-      <AnimatePresence>
-        {isFullScreen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-slate-950/95 p-3 backdrop-blur"
-          >
-            <div className="flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white dark:bg-slate-950">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-950 p-3 text-white dark:border-slate-800">
-                <div className="flex items-center gap-2 text-sm font-semibold">
-                  <FileText size={17} /> Resume Preview
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    asChild
-                    variant="ghost"
-                    size="sm"
-                    className="rounded-full text-white hover:bg-white/10 hover:text-white"
-                  >
-                    <a href={contact.resumeUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" /> Open
-                    </a>
-                  </Button>
-                  <Button
-                    onClick={handleDownload}
-                    variant="ghost"
-                    size="sm"
-                    className="rounded-full text-white hover:bg-white/10 hover:text-white"
-                  >
-                    <Download className="h-4 w-4" /> Download
-                  </Button>
-                  <Button
-                    onClick={() => setIsFullScreen(false)}
-                    variant="ghost"
-                    size="sm"
-                    className="rounded-full text-white hover:bg-white/10 hover:text-white"
-                  >
-                    <X className="h-4 w-4" /> Close
-                  </Button>
-                </div>
-              </div>
-              <iframe src={contact.resumeUrl} title="Resume Fullscreen" className="min-h-0 flex-1" />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

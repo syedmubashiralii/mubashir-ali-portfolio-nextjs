@@ -1,28 +1,26 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Bot, CheckCircle2, Network, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { Award, Bot, Network, ShieldCheck, Workflow } from "lucide-react";
+import SectionHeading from "@/app/components/site/SectionHeading";
 
 const capabilities = [
   {
     icon: Bot,
     title: "AI coding agents",
-    text: "Confident with agentic planning, codebase exploration, implementation, refactoring, and review workflows.",
+    text: "Agentic planning, codebase exploration, implementation, refactoring, and review workflows.",
   },
   {
     icon: Network,
     title: "MCP integrations",
-    text: "Comfortable connecting agents to repositories, documentation, tools, services, and structured product context.",
+    text: "Connecting agents to repositories, documentation, tools, services, and structured product context.",
   },
   {
     icon: Workflow,
     title: "AI-assisted delivery",
-    text: "Use AI to shorten feedback loops across discovery, implementation, testing, documentation, and release work.",
+    text: "Shorter feedback loops across discovery, implementation, testing, documentation, and release work.",
   },
   {
     icon: ShieldCheck,
     title: "Engineering guardrails",
-    text: "Keep architecture, privacy, security, verification, and human accountability at the center of every delivery.",
+    text: "Architecture, privacy, security, and testing decisions stay with me.",
   },
 ] as const;
 
@@ -33,88 +31,42 @@ const workflow = [
   "Review, test, and ship",
 ] as const;
 
-export default function AgenticAI() {
+export default function AgenticAI({ id }: Readonly<{ id?: string }>) {
   return (
-    <section id="ai" className="relative overflow-hidden bg-[#061019] px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28">
-      <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(103,232,249,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(103,232,249,0.08)_1px,transparent_1px)] [background-size:52px_52px]" />
-      <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end"
-        >
-          <div>
-            <p className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">
-              <Sparkles size={14} /> Agentic AI &amp; MCPs
-            </p>
-            <h2 className="mt-4 text-balance text-4xl font-bold tracking-[-0.035em] sm:text-5xl">
-              Comfortable collaborating with AI—and accountable for what ships.
-            </h2>
-          </div>
-          <p className="text-base leading-8 text-slate-300">
-            I work confidently with AI coding agents, agentic workflows, and Model Context Protocol tools. They help me
-            understand systems faster, coordinate richer context, and execute with speed; senior engineering judgment
-            still drives every architectural choice and production decision.
-          </p>
-        </motion.div>
+    <section id={id} className="bg-pine-900 px-4 py-20 text-paper sm:px-6 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          tone="dark"
+          eyebrow="Agentic AI & MCPs"
+          title="AI speeds up the work. I stay accountable for what ships."
+          intro="Agents help me understand systems faster and execute with more context. Senior engineering judgment still drives every architectural choice and production decision."
+        />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {capabilities.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <motion.article
-                  key={item.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.42, delay: index * 0.05 }}
-                  className="rounded-xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur"
-                >
-                  <span className="grid h-10 w-10 place-items-center rounded-md bg-cyan-300 text-slate-950">
-                    <Icon size={18} />
-                  </span>
-                  <h3 className="mt-5 font-bold">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-slate-400">{item.text}</p>
-                </motion.article>
-              );
-            })}
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2">
+            {capabilities.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="bg-pine-900 p-7">
+                <Icon size={24} className="text-volt" aria-hidden="true" />
+                <h3 className="mt-6 text-xl font-bold">{title}</h3>
+                <p className="mt-2 leading-7 text-sage">{text}</p>
+              </article>
+            ))}
           </div>
 
-          <motion.aside
-            initial={{ opacity: 0, x: 18 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="rounded-xl border border-cyan-300/20 bg-[#0a1721] p-6 shadow-2xl shadow-black/20"
-          >
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.15em] text-cyan-200">
-                <Workflow size={15} /> Delivery loop
-              </div>
-              <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.8)]" />
-            </div>
-            <ol className="mt-5 space-y-3">
+          <aside className="flex flex-col rounded-3xl bg-volt p-7 text-pine-950">
+            <h3 className="text-2xl font-bold">The delivery loop</h3>
+            <ol className="mt-6 flex-1 space-y-4">
               {workflow.map((step, index) => (
-                <li
-                  key={step}
-                  className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3 text-sm text-slate-300"
-                >
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded bg-white/10 font-mono text-xs font-bold text-cyan-300">
-                    {index + 1}
-                  </span>
-                  <span className="flex-1">{step}</span>
-                  <CheckCircle2 size={15} className="text-emerald-300" />
+                <li key={step} className="flex items-baseline gap-3 font-medium">
+                  <span className="font-mono text-sm font-bold">0{index + 1}</span> {step}
                 </li>
               ))}
             </ol>
-            <p className="mt-5 border-t border-white/10 pt-5 text-xs leading-6 text-slate-300">
-              The goal is not more generated code. It is a shorter path to reliable product outcomes.
+            <p className="mt-8 flex gap-2 border-t border-pine-950/25 pt-5 text-sm font-medium">
+              <Award size={17} className="shrink-0" aria-hidden="true" />
+              Claude Code for Professional Developers certificate, Code With Mosh, June 2026.
             </p>
-          </motion.aside>
+          </aside>
         </div>
       </div>
     </section>

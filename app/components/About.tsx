@@ -1,120 +1,61 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Bot, CheckCircle2, Mail, MapPin, Phone, Rocket, ShieldCheck, Smartphone } from "lucide-react";
-import Link from "next/link";
-import { contact, focusAreas, stats } from "../data/portfolio";
+import { Bot, Check, Rocket, ShieldCheck, Smartphone } from "lucide-react";
+import SectionHeading from "@/app/components/site/SectionHeading";
+import { focusAreas } from "@/app/data/portfolio";
 
 const strengths = [
   {
-    icon: <Rocket size={18} />,
+    icon: Rocket,
     title: "End-to-end delivery",
-    text: "From architecture and implementation through release builds, App Store deployment, and production support.",
+    text: "From architecture and implementation through release builds, store deployment, and production support.",
   },
   {
-    icon: <ShieldCheck size={18} />,
+    icon: ShieldCheck,
     title: "Production discipline",
-    text: "Clean architecture, scalable modules, performance-aware code, and pragmatic issue resolution.",
+    text: "Clean architecture, modular code, attention to performance, and practical fixes for production issues.",
   },
   {
-    icon: <Smartphone size={18} />,
+    icon: Smartphone,
     title: "Cross-platform craft",
-    text: "Flutter, React Native, native iOS and Android, responsive web, desktop, payments, maps, and media tools.",
+    text: "Flutter on mobile, web, and desktop, plus React Native, native iOS and Android, payments, maps, and media tools.",
   },
   {
-    icon: <Bot size={18} />,
+    icon: Bot,
     title: "AI-native workflow",
-    text: "Agentic AI, coding agents, and MCP tools used with deliberate review, verification, and production accountability.",
+    text: "Agentic AI, coding agents, and MCP tools, used with deliberate review and verification.",
   },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#eef2f3] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end"
-        >
-          <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">About</p>
-            <h2 className="mt-4 text-4xl font-bold leading-tight tracking-[-0.035em] text-slate-950 sm:text-5xl dark:text-white">
-              Product-focused app engineering across every major screen.
-            </h2>
+    <section id="about" className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="About"
+          title="A product engineer across every major screen."
+          intro="Flutter on mobile, web, and desktop, plus React Native, native Android and iOS, and Next.js, so one engineer can own the whole product."
+        />
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {strengths.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="reveal rounded-3xl border border-rule bg-paper p-7">
+                <Icon size={24} className="text-pine-600" aria-hidden="true" />
+                <h3 className="mt-6 text-xl font-bold">{title}</h3>
+                <p className="mt-2 leading-7 text-moss">{text}</p>
+              </article>
+            ))}
           </div>
-          <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-            Results-driven app developer with 5+ years of hands-on experience architecting and shipping 20+
-            production-ready mobile, web, and desktop applications. Deep Flutter expertise is complemented by React
-            Native, native Android and iOS delivery, and modern web development for complete product ownership.
-          </p>
-        </motion.div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
-            className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              {strengths.map((item) => (
-                <div key={item.title} className="rounded-lg border border-slate-100 bg-[#f7f9f9] p-4 dark:border-slate-800 dark:bg-slate-950">
-                  <div className="mb-3 grid h-9 w-9 place-items-center rounded-md bg-slate-950 text-cyan-300 dark:bg-cyan-300 dark:text-slate-950">{item.icon}</div>
-                  <h3 className="text-sm font-semibold text-slate-950 dark:text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{item.text}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <Link
-                href={`mailto:${contact.email}`}
-                className="flex items-center gap-3 rounded-md border border-slate-200 p-3 text-sm text-slate-700 transition hover:border-cyan-400 hover:text-cyan-700 dark:border-slate-800 dark:text-slate-300"
-              >
-                <Mail size={17} /> Email
-              </Link>
-              <Link
-                href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                className="flex items-center gap-3 rounded-md border border-slate-200 p-3 text-sm text-slate-700 transition hover:border-cyan-400 hover:text-cyan-700 dark:border-slate-800 dark:text-slate-300"
-              >
-                <Phone size={17} /> Call
-              </Link>
-              <div className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 text-sm text-slate-700 dark:border-slate-800 dark:text-slate-300">
-                <MapPin size={17} /> {contact.location}
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.08 }}
-            className="rounded-xl border border-slate-800 bg-[#061019] p-6 text-white shadow-xl shadow-slate-900/10"
-          >
-            <h3 className="text-lg font-semibold">Where I create impact</h3>
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-lg bg-white/10 p-4">
-                  <p className="text-2xl font-bold">{stat.value}</p>
-                  <p className="mt-1 text-xs text-slate-300">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 space-y-2">
+          <aside className="rounded-3xl bg-lilac p-7 text-pine-950">
+            <h3 className="text-2xl font-bold">Where I do my best work</h3>
+            <ul className="mt-6 space-y-3 font-medium">
               {focusAreas.map((area) => (
-                <div key={area} className="flex items-center gap-2 text-sm text-slate-200">
-                  <CheckCircle2 size={16} className="text-cyan-300" />
-                  {area}
-                </div>
+                <li key={area} className="flex gap-2">
+                  <Check size={18} className="mt-0.5 shrink-0" aria-hidden="true" /> {area}
+                </li>
               ))}
-            </div>
-          </motion.div>
+            </ul>
+          </aside>
         </div>
       </div>
     </section>
