@@ -3,15 +3,31 @@ import { certifications, contact, experiences, projects, skillCategories, stats 
 import { packages } from "./site";
 
 describe("portfolio data", () => {
-  it("starts public experience in 2021 and shows the Khastech experience letter", () => {
+  it("matches the dates and titles in the linked experience letters", () => {
     const yearsExperience = stats.find((stat) => stat.label === "Years Experience");
     const khastech = experiences.find((experience) => experience.company === "Khastech Solutions");
+    const koders = experiences.find((experience) => experience.company === "KodersPoint");
+    const heapStash = experiences.find((experience) => experience.company.startsWith("HeapStash"));
 
-    expect(yearsExperience?.value).toBe("5+");
+    expect(yearsExperience?.value).toBe("4+");
     expect(khastech).toEqual(
       expect.objectContaining({
-        period: "Jul 2021 - Nov 2023",
+        period: "Jul 2022 - Nov 2023",
         documentLink: "/Experience-Letter-Khastech.pdf",
+      }),
+    );
+    expect(koders).toEqual(
+      expect.objectContaining({
+        title: "Flutter Developer",
+        period: "Jul 2023 - Sep 2025",
+        documentLink: "/KP-Experience-Letter.jpg",
+      }),
+    );
+    expect(heapStash).toEqual(
+      expect.objectContaining({
+        title: "Software Engineer",
+        company: "HeapStash Global (for Sheikh Maktoum NEO Technologies, UAE)",
+        documentLink: "/Experience-Letter-HeapStash.pdf",
       }),
     );
   });

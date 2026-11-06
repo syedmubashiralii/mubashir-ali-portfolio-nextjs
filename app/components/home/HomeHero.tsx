@@ -23,7 +23,7 @@ export default function HomeHero() {
             Apps that can&apos;t afford to break, <span className="text-volt">shipped at AI speed.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-sage">
-            I&apos;m {contact.name}. For 5+ years I&apos;ve built fintech, telecom, and POS products for teams serving
+            I&apos;m {contact.name}. For 4+ years I&apos;ve built fintech, telecom, and POS products for teams serving
             Africa, the UAE, and Australia. I use coding agents and MCP to move faster, and I review and test everything
             that ships.
           </p>

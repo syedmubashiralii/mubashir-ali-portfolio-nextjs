@@ -14,7 +14,7 @@ export const contact = {
 };
 
 export const stats = [
-  { value: "5+", label: "Years Experience" },
+  { value: "4+", label: "Years Experience" },
   { value: "20+", label: "Production Apps" },
   { value: "5+", label: "Industries" },
   { value: "4", label: "Platforms: iOS, Android, Web, Desktop" },
@@ -131,11 +131,11 @@ export const experiences = [
     stack: ["Flutter", "Flutter Desktop", "Dart", "POS", "Linkly", "Inventory", "Promotions"],
   },
   {
-    title: "Senior Flutter Developer",
+    title: "Flutter Developer",
     company: "KodersPoint",
     companyUrl: "",
     location: "Lahore, PK (Remote)",
-    period: "Jul 2023 - Oct 2025",
+    period: "Jul 2023 - Sep 2025",
     badge: "",
     documentLink: "/KP-Experience-Letter.jpg",
     highlights: [
@@ -145,8 +145,8 @@ export const experiences = [
     stack: ["Flutter", "Flutter Web", "React Native", "Java Android", "Client Delivery"],
   },
   {
-    title: "Flutter Developer",
-    company: "HeapStash Global (for Sheikh Makhtoum Neo Technologies, UAE)",
+    title: "Software Engineer",
+    company: "HeapStash Global (for Sheikh Maktoum NEO Technologies, UAE)",
     companyUrl: "",
     location: "Lahore, PK (Remote)",
     period: "Nov 2023 - Mar 2025",
@@ -164,7 +164,7 @@ export const experiences = [
     company: "Khastech Solutions",
     companyUrl: "",
     location: "Islamabad, PK",
-    period: "Jul 2021 - Nov 2023",
+    period: "Jul 2022 - Nov 2023",
     badge: "",
     documentLink: "/Experience-Letter-Khastech.pdf",
     highlights: [

@@ -9,7 +9,7 @@ import ProjectsPage from "./projects/page";
 
 const pages = [
   ["home", HomePage, "Apps that can't afford to break, shipped at AI speed."],
-  ["portfolio", PortfolioPage, "Five years of shipped products, in one place."],
+  ["portfolio", PortfolioPage, "Four years of shipped products, in one place."],
   ["projects", ProjectsPage, "Flutter apps built for real operations."],
   ["packages", PackagesPage, "Flutter packages and developer tools."],
   ["contact", ContactPage, "Need a product built, rescued, or sped up?"],

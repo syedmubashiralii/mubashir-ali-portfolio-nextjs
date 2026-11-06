@@ -103,7 +103,7 @@ const contactKeywords = [
 ];
 
 const leadDescription =
-  "Senior Flutter and AI-native product engineer building fintech, telecom, and POS apps. 5+ years, 20+ production apps. Hire for new builds and app rescue.";
+  "Senior Flutter and AI-native product engineer building fintech, telecom, and POS apps. 4+ years, 20+ production apps. Hire for new builds and app rescue.";
 
 function routeUrl(path: RoutePath) {
   return `${siteUrl}${path === "/" ? "" : path}`;
@@ -476,7 +476,7 @@ export function buildLlmsText() {
 
   return `# Syed Mubashir Ali
 
-> Senior Flutter and AI-native product engineer with 5+ years of experience and 20+ production apps across fintech, telecom, and POS.
+> Senior Flutter and AI-native product engineer with 4+ years of experience and 20+ production apps across fintech, telecom, and POS.
 
 Hire Syed for Flutter and React Native apps, native iOS and Android development, web and Flutter desktop products, Agentic AI and MCP workflows, app rescue, fintech systems, telecom self-care, POS platforms, and store release support.
 

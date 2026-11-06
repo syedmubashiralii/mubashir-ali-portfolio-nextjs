@@ -25,7 +25,7 @@ export default function PortfolioPage() {
       <PageHero
         id="home"
         eyebrow="Portfolio"
-        title="Five years of shipped products, in one place."
+        title="Four years of shipped products, in one place."
         description={`I'm ${contact.name}, a senior engineer working across fintech, telecom, POS, travel, and consumer products. Here's the experience, the skills, and the work behind it.`}
       >
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
