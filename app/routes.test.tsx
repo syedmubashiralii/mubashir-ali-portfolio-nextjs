@@ -55,7 +55,7 @@ describe("HomePage", () => {
     expect(screen.getByText("Available for selected projects")).toBeVisible();
     expect(screen.getByText("Yas SelfCare App at Axian Group")).toBeVisible();
     expect(screen.getByRole("heading", { name: "Yas SelfCare App" })).toBeVisible();
-    expect(document.body).not.toHaveTextContent("Tanzania");
+    expect(document.body).not.toHaveTextContent("Tanzania Super App");
     expect(screen.getByRole("heading", { name: "Product engineering" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Agentic AI & MCPs" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Build, rescue & scale" })).toBeVisible();

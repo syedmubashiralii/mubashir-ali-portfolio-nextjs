@@ -7,6 +7,7 @@ describe("portfolio data", () => {
     const yearsExperience = stats.find((stat) => stat.label === "Years Experience");
     const khastech = experiences.find((experience) => experience.company === "Khastech Solutions");
     const koders = experiences.find((experience) => experience.company === "KodersPoint");
+    const impact = experiences.find((experience) => experience.company === "Impact IT Solutions");
     const heapStash = experiences.find((experience) => experience.company.startsWith("HeapStash"));
 
     expect(yearsExperience?.value).toBe("4+");
@@ -16,6 +17,7 @@ describe("portfolio data", () => {
         documentLink: "/Experience-Letter-Khastech.pdf",
       }),
     );
+    expect(impact?.period).toBe("Apr 2025 - Nov 2025");
     expect(koders).toEqual(
       expect.objectContaining({
         title: "Flutter Developer",

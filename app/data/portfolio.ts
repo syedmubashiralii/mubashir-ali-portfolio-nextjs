@@ -49,7 +49,7 @@ export const skillCategories = [
   },
   {
     title: "State Management",
-    skills: ["Flutter BLoC", "Provider", "GetX"],
+    skills: ["Flutter BLoC", "Riverpod", "Provider", "GetX"],
   },
   {
     title: "Networking & APIs",
@@ -108,7 +108,7 @@ export const experiences = [
     documentLink: "",
     highlights: [
       "Building Flutter products at Axian Group, a pan-African telecom and fintech group.",
-      "Building the Yas SelfCare App, which lets Yas mobile subscribers manage their plans and services in one place.",
+      "Building the Yas SelfCare App, used by 5M+ people in Togo, Tanzania, Senegal, and Comoros to manage their telecom accounts, plans, and usage.",
       "Working on digital payment, wallet, and financial service features alongside telecom self-care.",
       "Contributing cross-platform features for network services and subscriber experience across African markets.",
     ],
@@ -119,7 +119,7 @@ export const experiences = [
     company: "Impact IT Solutions",
     companyUrl: "",
     location: "Islamabad, PK",
-    period: "Apr 2025 - Dec 2025",
+    period: "Apr 2025 - Nov 2025",
     badge: "",
     documentLink: "",
     highlights: [
@@ -181,7 +181,7 @@ export const education = {
   degree: "Bachelor of Science in Computer Science",
   institution: "PMAS Arid Agriculture University, Rawalpindi",
   location: "Rawalpindi, Pakistan",
-  period: "Oct 2018 - Jun 2022",
+  period: "Oct 2018 - Aug 2022",
 };
 
 export const certifications = [
@@ -224,7 +224,7 @@ export const projects = [
     title: "Yas SelfCare App",
     category: "Telecom Self-Care",
     description:
-      "Flutter self-care app for Yas, Axian Group's telecom brand, that lets subscribers manage their plans and services in one place. My current build.",
+      "Flutter self-care app for Yas, Axian Group's telecom brand, used by 5M+ people across four African countries to manage their accounts, plans, and usage. My current build.",
     tags: ["Flutter", "Telecom", "Self-Care", "BLoC", "Clean Architecture"],
     liveLink: "",
     githubLink: "",
