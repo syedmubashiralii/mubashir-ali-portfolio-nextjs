@@ -18,7 +18,12 @@ describe("portfolio data", () => {
       }),
     );
     expect(experiences[0].title).toBe("Mobile Application Developer (Flutter)");
-    expect(impact?.period).toBe("Apr 2025 - Nov 2025");
+    expect(impact).toEqual(
+      expect.objectContaining({
+        period: "Apr 2025 - Nov 2025",
+        documentLink: "/Experience-Letter-Impact-IT.pdf",
+      }),
+    );
     expect(koders).toEqual(
       expect.objectContaining({
         title: "Flutter Developer",
