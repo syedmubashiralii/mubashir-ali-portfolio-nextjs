@@ -17,6 +17,7 @@ describe("portfolio data", () => {
         documentLink: "/Experience-Letter-Khastech.pdf",
       }),
     );
+    expect(experiences[0].title).toBe("Mobile Application Developer (Flutter)");
     expect(impact?.period).toBe("Apr 2025 - Nov 2025");
     expect(koders).toEqual(
       expect.objectContaining({

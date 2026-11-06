@@ -99,7 +99,7 @@ export const skillCategories = [
 
 export const experiences = [
   {
-    title: "Senior Flutter Developer",
+    title: "Mobile Application Developer (Flutter)",
     company: "Axian Group",
     companyUrl: "https://www.axian-group.com/",
     location: "Islamabad, PK",
